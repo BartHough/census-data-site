@@ -10,6 +10,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy-prod": "aws s3 cp --recursive ./build s3://census-data-prod",
+    "deploy-beta": "aws s3 cp --recursive ./build s3://census-data-beta",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
