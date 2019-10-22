@@ -1,3 +1,14 @@
+# Census Data Site
+Our application will be built to allow users to visualize governmental business and economy census data. This data is powerful, yet difficult to understand in a raw data format. By creating charts that are easy to read, users can come to conclusions about the data set and predict future census data.
+
+In doing the above, our group seeks to learn skills that are valuable in today’s software development marketplace such as serverless architecture with AWS, ReactJS, and data visualizations using ChartJS.
+
+## Plan of Attack
+1. Chart  page w X Data from Census API
+2. Time period buttons around chart
+3. Create a home page with dropdowns for different data that leads to our chart page
+4. Map that adds location configuration - might need an intermediate API to get US region from Lat-Long (we assume)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -60,8 +71,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 ### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+#### Deploying to Beta
+Whenever we want to push a change to our AWS beta bucket, run `npm run build && npm run deploy-beta`
+#### Deploying to Production
+Whenever we want to push a change to our AWS production bucket, run `npm run build && npm run deploy-prod` 
+We might consider adding a CICD pipeline later if we have extra time.
+More general React details here: https://facebook.github.io/create-react-app/docs/deployment
 
 ### `npm run build` fails to minify
 
