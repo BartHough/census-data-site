@@ -5,19 +5,49 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.varData = [];
     this.state = {
-      APIData: [],
+      apiData: [],
       graphData: [],
+      tableData: [],
+      varData: [],
+      currentTable: {},
       fromYear: 2018
     }
   }
-  
 
   async componentDidMount() {
-    let APIData
-    APIHelper.testFunc(APIData);
-    console.log(APIData);
-    console.log(this.state.APIData);
+    this.getAPIData();
+    //this.getVariables();
+  }
+
+  getAPIData = () => {
+    const apiHelper = new APIHelper();
+    fetch('https://api.census.gov/data/timeseries/eits')
+        .then(res => res.json())
+        .then(data => {
+          this.setState({
+            apiData: data,
+            tableData: apiHelper.getTables(data),
+          });
+          console.log(this.state.tableData);
+        })
+        .then(() => {
+            this.getVariables(this.state.tableData[0].varLink)
+        })
+        .catch(console.log)
+  }
+
+  getVariables = (varLink) => {
+    fetch(varLink)
+    .then(res => res.json())
+      .then(data => {
+        this.setState({
+          varData: data
+        })
+        console.log(this.state.varData);
+      })
+      .catch(console.log)
   }
 
   handleAPIClick = () => {
