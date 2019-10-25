@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-maps-react": "^2.0.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-geocode": "^0.2.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
