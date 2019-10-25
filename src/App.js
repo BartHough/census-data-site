@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
+import APIHelper from './APIHelper';
 import './App.css';
 
 class App extends Component {
-  state = {
-    APIData: [],
-    fromYear: 2018
+  constructor(props) {
+    super(props);
+    this.state = {
+      APIData: [],
+      graphData: [],
+      fromYear: 2018
+    }
+  }
+  
+
+  async componentDidMount() {
+    let APIData
+    APIHelper.testFunc(APIData);
+    console.log(APIData);
+    console.log(this.state.APIData);
   }
 
   handleAPIClick = () => {
@@ -12,9 +25,9 @@ class App extends Component {
         .then(res => res.json())
         .then((data) => {
           this.setState({
-            APIData: data
+            graphData: data
           });
-          console.log(this.state.APIData);
+          console.log(this.state.graphData);
         })
         .catch(console.log)
   };
