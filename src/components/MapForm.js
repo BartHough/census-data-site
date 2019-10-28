@@ -44,7 +44,7 @@ export class MapForm extends Component {
         postalCode: "",
         region: "",
         tableName: "",
-        tableUrl: "",
+        tableId: "",
         variable: "",
         timeStart: "",
         timeEnd: ""
@@ -59,13 +59,13 @@ export class MapForm extends Component {
   }
 
   handleTableName(selectedOption) {
-    const tableUrl = selectedOption.value
+    const tableId = selectedOption.value
     const tableName = selectedOption.label
     this.setState({
       fields: {
         ...this.state.fields,
         tableName,
-        tableUrl
+        tableId
       }
     })
   }
@@ -174,6 +174,16 @@ export class MapForm extends Component {
       .catch(console.log)
   }
 
+  getAPIGraphData = (event) => {
+    event.preventDefault()
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+2008`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      })
+      .catch(console.log)
+  }
+
   getTables(apiData) {
     let tableObjects = []
     apiData.dataset.forEach(table => {
@@ -198,7 +208,7 @@ export class MapForm extends Component {
     let selectOptions = []
     tableObjects.forEach(table => {
       selectOptions.push(
-        { value: table.varLink, label: table.title }
+        { value: table.id, label: table.title }
       )
     })
     return selectOptions
@@ -240,7 +250,7 @@ export class MapForm extends Component {
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
           <Marker position={this.state.fields.latlng} />
-          <form style={style.form}>
+          <form onSubmit={this.getAPIGraphData} style={style.form}>
             <Select
               placeholder='Select Table'
               style={style.select}
