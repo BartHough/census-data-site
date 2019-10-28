@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
+import Select from 'react-select';
 const apiKey = ''
 Geocode.setApiKey(apiKey)
 
@@ -15,8 +16,15 @@ const style = {
   },
   form: {
     margin: '20px'
+  },
+  select: {
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      width: 50
+    })
   }
 }
+
 
 export class MapForm extends Component {
 
@@ -34,10 +42,13 @@ export class MapForm extends Component {
         postalCode: "",
         region: "",
         tableName: "",
+        tableUrl: "",
         variable: "",
         timeStart: "",
         timeEnd: ""
-      }
+      },
+      tableData: [],
+      dropDown: []
     }
     this.handleTableName = this.handleTableName.bind(this)
     this.handleVariable = this.handleVariable.bind(this)
@@ -45,9 +56,16 @@ export class MapForm extends Component {
     this.handleTimeEnd = this.handleTimeEnd.bind(this)
   }
 
-  handleTableName(event) {
-    const tableName = event.target.value
-    this.setState({ fields: { ...this.state.fields, tableName } })
+  handleTableName(selectedOption) {
+    const tableUrl = selectedOption.value
+    const tableName = selectedOption.label
+    this.setState({
+      fields: {
+        ...this.state.fields,
+        tableName,
+        tableUrl
+      }
+    })
   }
 
   handleVariable(event) {
@@ -128,6 +146,7 @@ export class MapForm extends Component {
 
   async componentDidMount() {
     const { lat, lng } = await this.getcurrentLocation();
+    await this.getAPIData();
     this.setState(prev => ({
       fields: {
         ...prev.fields,
@@ -144,6 +163,46 @@ export class MapForm extends Component {
     this.updateFields(lat, lng)
   }
 
+  async getAPIData() {
+    fetch('https://api.census.gov/data/timeseries/eits')
+      .then(res => res.json())
+      .then(data => {
+        this.getTables(data)
+      })
+      .catch(console.log)
+  }
+
+  getTables(apiData) {
+    let tableObjects = []
+    apiData.dataset.forEach(table => {
+      const newObj = {
+        "id": table.c_dataset[2], // id needed for graph data API call URL
+        "title": table.title.split(': ')[1], // takes table title description after ': '
+        "varLink": table.c_variablesLink
+      }
+      tableObjects.push(newObj);
+    });
+    let titles = this.extractDropdownOptions(tableObjects);
+    console.log('titles', titles)
+    this.setState({
+      ...this.state,
+      tableData: tableObjects,
+      dropDown: titles
+    });
+    console.log('state table objects', this.state.tableData)
+  }
+
+  extractDropdownOptions(tableObjects) {
+    let selectOptions = []
+    tableObjects.forEach(table => {
+      selectOptions.push(
+        { value: table.varLink, label: table.title }
+      )
+    })
+    return selectOptions
+  }
+
+  // Adapted from answer posted by github user Mostafasaffari: https://github.com/fullstackreact/google-maps-react/issues/192
   getcurrentLocation() {
     if (navigator && navigator.geolocation) {
       return new Promise((resolve, reject) => {
@@ -162,7 +221,7 @@ export class MapForm extends Component {
     };
   }
 
-  addMarker = (location, map) => {
+  addMarker (location, map) {
     this.updateFields(location.lat(), location.lng());
     map.panTo(location);
   };
@@ -180,10 +239,12 @@ export class MapForm extends Component {
         >
           <Marker position={this.state.fields.latlng} />
           <form style={style.form}>
-            <label>Table Name</label>
-            <input placeholder="Table Name" type="text" onChange={this.handleTableName} />
-            <label>Variable To View</label>
-            <input placeholder="Variable" type="text" onChange={this.handleVariable} />
+            <Select
+              placeholder='Select Table'
+              style={style.select}
+              onChange={this.handleTableName}
+              options={this.state.dropDown}
+            />
             <br></br>
             <label>Time Period Start</label>
             <input placeholder="Time Period Start" type="date" value={this.state.fields.timeStart} onChange={this.handleTimeStart} />
