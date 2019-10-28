@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Chart from './Chart';
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
           <h2>Data in Console</h2>
           <p>Data is stored in the state as APIData</p>
         </div>
+        <Chart />
       </div>
     );
   }
