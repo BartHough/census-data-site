@@ -45,6 +45,7 @@ export class MapForm extends Component {
         region: "",
         tableName: "",
         tableId: "",
+        fromYear: "",
         variable: "",
         timeStart: "",
         timeEnd: ""
@@ -61,11 +62,19 @@ export class MapForm extends Component {
   handleTableName(selectedOption) {
     const tableId = selectedOption.value
     const tableName = selectedOption.label
+    // Get the fromYear prop for selected item
+    let fromYear
+    this.state.tableData.forEach(table => {
+      if(table.id == tableId) {
+        fromYear = table.fromYear
+      }
+    })
     this.setState({
       fields: {
         ...this.state.fields,
         tableName,
-        tableId
+        tableId,
+        fromYear
       }
     })
   }
@@ -176,10 +185,11 @@ export class MapForm extends Component {
 
   getAPIGraphData = (event) => {
     event.preventDefault()
-    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+2008`)
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fields.fromYear}`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        console.log(`fromYear: ${this.state.fields.fromYear}`)
       })
       .catch(console.log)
   }
@@ -190,7 +200,8 @@ export class MapForm extends Component {
       const newObj = {
         "id": table.c_dataset[2], // id needed for graph data API call URL
         "title": table.title.split(': ')[1], // takes table title description after ': '
-        "varLink": table.c_variablesLink
+        "varLink": table.c_variablesLink,
+        "fromYear": table.temporal.match(/[1|2]\d+/g).map(Number)[0] // parses 1000/2000 years from string ex. 1968, 2005
       }
       tableObjects.push(newObj);
     });
