@@ -46,6 +46,7 @@ export class MapForm extends Component {
         tableName: "",
         tableId: "",
         fromYear: "",
+        graphData: "",
         variable: "",
         timeStart: "",
         timeEnd: ""
@@ -188,7 +189,11 @@ export class MapForm extends Component {
     fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fields.fromYear}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        this.setState({
+          ...this.state,
+          graphData: data
+        });
+        console.log(this.state.graphData)
         console.log(`fromYear: ${this.state.fields.fromYear}`)
       })
       .catch(console.log)
