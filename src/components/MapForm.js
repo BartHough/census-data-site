@@ -3,6 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import {GoogleApiKey} from '../APIKeys';
+// import "../styles/MapForm.css"
 
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
@@ -54,10 +55,11 @@ export class MapForm extends Component {
       tableData: [],
       dropDown: []
     }
-    this.handleTableName = this.handleTableName.bind(this)
-    this.handleVariable = this.handleVariable.bind(this)
-    this.handleTimeStart = this.handleTimeStart.bind(this)
-    this.handleTimeEnd = this.handleTimeEnd.bind(this)
+    this.handleTableName = this.handleTableName.bind(this);
+    this.handleVariable = this.handleVariable.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleTimeStart = this.handleTimeStart.bind(this)
+    // this.handleTimeEnd = this.handleTimeEnd.bind(this)
   }
 
   handleTableName(selectedOption) {
@@ -85,15 +87,21 @@ export class MapForm extends Component {
     this.setState({ fields: { ...this.state.fields, variable } })
   }
 
-  handleTimeStart(event) {
-    const timeStart = event.target.value
-    this.setState({ fields: { ...this.state.fields, timeStart } })
+  handleChange(evt) {
+    this.setState({
+    [evt.target.name]: evt.target.value
+    });
   }
 
-  handleTimeEnd(event) {
-    const timeEnd = event.target.value
-    this.setState({ fields: { ...this.state.fields, timeEnd } })
-  }
+  // handleTimeStart(event) {
+  //   const timeStart = event.target.value
+  //   this.setState({ fields: { ...this.state.fields, timeStart } })
+  // }
+
+  // handleTimeEnd(event) {
+  //   const timeEnd = event.target.value
+  //   this.setState({ fields: { ...this.state.fields, timeEnd } })
+  // }
 
   findRegion(state) {
     const west = ['WA', 'OR', 'CA', 'ID', 'NV', 'MT', 'WY', 'UT', 'CO', 'AZ', 'NM']
@@ -265,34 +273,89 @@ export class MapForm extends Component {
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
-          <Marker position={this.state.fields.latlng} />
-          <form onSubmit={this.getAPIGraphData} style={style.form}>
+        <Marker position={this.state.fields.latlng} />
+        <form className="mapForm" onSubmit={this.getAPIGraphData} style={style.form}>
+          <div>
             <Select
+              name='tableDropDown'
               placeholder='Select Table'
               style={style.select}
               onChange={this.handleTableName}
               options={this.state.dropDown}
             />
-            <br></br>
-            <label>Time Period Start</label>
-            <input placeholder="Time Period Start" type="date" value={this.state.fields.timeStart} onChange={this.handleTimeStart} />
-            <label>Time Period End</label>
-            <input placeholder="Time Period End" type="date" value={this.state.fields.timeEnd} onChange={this.handleTimeEnd} />
-            <br></br>
-            <label> Latitude </label>
-            <input readOnly placeholder="Latitude" type="text" value={this.state.fields.latlng.lat} />
-            <label> Longitude </label>
-            <input readOnly placeholder="Longitude" type="text" value={this.state.fields.latlng.lng} />
-            <label> State </label>
-            <input readOnly placeholder="State" type="text" value={this.state.fields.stateLong} />
-            <br></br>
-            <label> Postal Code </label>
-            <input readOnly placeholder="Postal Code" type="text" value={this.state.fields.postalCode} />
-            <label> Region </label>
-            <input readOnly placeholder="Region" type="text" value={this.state.fields.region} />
-            <br></br>
-            <input value="Submit" type="submit" />
-          </form>
+          </div>
+          <div>
+            <label htmlFor='timeStart'>Time Period Start</label>
+            <input 
+              name='timeStart' 
+              placeholder="Time Period Start" 
+              type="date" 
+              value={this.state.fields.timeStart} 
+              onChange={this.handleChange} 
+            />
+          </div>
+          <div>
+            <label htmlFor='timeEnd'>Time Period End</label>
+            <input 
+              name='timeEnd' 
+              placeholder="Time Period End" 
+              type="date" 
+              value={this.state.fields.timeEnd} 
+              onChange={this.handleChange} 
+            />
+          </div>
+          <div>
+            <label htmlFor='latitude'> Latitude </label>
+            <input 
+              readOnly
+              name='latitude' 
+              placeholder="Latitude" 
+              type="text" 
+              value={this.state.fields.latlng.lat} 
+            />
+          </div>
+          <div>
+            <label htmlFor='longitude'> Longitude </label>
+            <input 
+              readOnly 
+              name='longitude'
+              placeholder="Longitude" 
+              type="text" 
+              value={this.state.fields.latlng.lng} 
+            />
+          </div>
+          <div>
+            <label htmlFor='state'> State </label>
+            <input 
+              readOnly 
+              name='state'
+              placeholder="State" 
+              type="text" 
+              value={this.state.fields.stateLong} 
+            />
+          </div>
+          <div>
+            <label htmlFor='postalCode'> Postal Code </label>
+            <input 
+              readOnly 
+              name='postalCode'
+              placeholder="Postal Code" 
+              type="text" 
+              value={this.state.fields.postalCode} 
+            />
+          </div>
+          <div>
+            <label htmlFor='region'> Region </label>
+            <input 
+              readOnly
+              name='region' 
+              placeholder="Region" 
+              type="text" 
+              value={this.state.fields.region} 
+            />
+          </div>
+          <button>Submit</button>
+        </form>
         </Map>
       </div>
     );
