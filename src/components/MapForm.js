@@ -34,7 +34,6 @@ export class MapForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fields: {
         latlng: {
           lat: 41,
           lng: -108.3
@@ -50,8 +49,7 @@ export class MapForm extends Component {
         graphData: "",
         variable: "",
         timeStart: "",
-        timeEnd: ""
-      },
+        timeEnd: "",
       tableData: [],
       dropDown: []
     }
@@ -73,23 +71,21 @@ export class MapForm extends Component {
       }
     })
     this.setState({
-      fields: {
-        ...this.state.fields,
+        ...this.state,
         tableName,
         tableId,
         fromYear
-      }
     })
   }
 
   handleVariable(event) {
     const variable = event.target.value
-    this.setState({ fields: { ...this.state.fields, variable } })
+    this.setState({ ...this.state, variable })
   }
 
   handleChange(evt) {
     this.setState({
-    [evt.target.name]: evt.target.value
+      [evt.target.name] : evt.target.value
     });
   }
 
@@ -147,8 +143,7 @@ export class MapForm extends Component {
           });
           const region = this.findRegion(stateShort)
           this.setState({
-            fields: {
-              ...this.state.fields,
+              ...this.state,
               latlng: {
                 lat,
                 lng
@@ -158,7 +153,6 @@ export class MapForm extends Component {
               stateShort,
               postalCode,
               region
-            }
           })
         }
       )
@@ -168,13 +162,11 @@ export class MapForm extends Component {
     const { lat, lng } = await this.getcurrentLocation();
     await this.getAPIData();
     this.setState(prev => ({
-      fields: {
-        ...prev.fields,
+        ...prev,
         latlng: {
           lat,
           lng
-        }
-      },
+        },
       currentLocation: {
         lat,
         lng
@@ -194,7 +186,7 @@ export class MapForm extends Component {
 
   getAPIGraphData = (event) => {
     event.preventDefault()
-    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fields.fromYear}`)
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fromYear}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -202,7 +194,7 @@ export class MapForm extends Component {
           graphData: data
         });
         console.log(this.state.graphData)
-        console.log(`fromYear: ${this.state.fields.fromYear}`)
+        console.log(`fromYear: ${this.state.fromYear}`)
       })
       .catch(console.log)
   }
@@ -268,12 +260,12 @@ export class MapForm extends Component {
         <Map
           google={this.props.google}
           style={style.map}
-          initialCenter={this.state.fields.latlng}
-          center={this.state.fields.latlng}
+          initialCenter={this.state.latlng}
+          center={this.state.latlng}
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
-        <Marker position={this.state.fields.latlng} />
+        <Marker position={this.state.latlng} />
         <form className="mapForm" onSubmit={this.getAPIGraphData} style={style.form}>
           <div>
             <Select
@@ -290,7 +282,7 @@ export class MapForm extends Component {
               name='timeStart' 
               placeholder="Time Period Start" 
               type="date" 
-              value={this.state.fields.timeStart} 
+              value={this.state.timeStart} 
               onChange={this.handleChange} 
             />
           </div>
@@ -300,7 +292,7 @@ export class MapForm extends Component {
               name='timeEnd' 
               placeholder="Time Period End" 
               type="date" 
-              value={this.state.fields.timeEnd} 
+              value={this.state.timeEnd} 
               onChange={this.handleChange} 
             />
           </div>
@@ -311,7 +303,7 @@ export class MapForm extends Component {
               name='latitude' 
               placeholder="Latitude" 
               type="text" 
-              value={this.state.fields.latlng.lat} 
+              value={this.state.latlng.lat} 
             />
           </div>
           <div>
@@ -321,7 +313,7 @@ export class MapForm extends Component {
               name='longitude'
               placeholder="Longitude" 
               type="text" 
-              value={this.state.fields.latlng.lng} 
+              value={this.state.latlng.lng} 
             />
           </div>
           <div>
@@ -331,7 +323,7 @@ export class MapForm extends Component {
               name='state'
               placeholder="State" 
               type="text" 
-              value={this.state.fields.stateLong} 
+              value={this.state.stateLong} 
             />
           </div>
           <div>
@@ -341,7 +333,7 @@ export class MapForm extends Component {
               name='postalCode'
               placeholder="Postal Code" 
               type="text" 
-              value={this.state.fields.postalCode} 
+              value={this.state.postalCode} 
             />
           </div>
           <div>
@@ -351,7 +343,7 @@ export class MapForm extends Component {
               name='region' 
               placeholder="Region" 
               type="text" 
-              value={this.state.fields.region} 
+              value={this.state.region} 
             />
           </div>
           <button>Submit</button>
