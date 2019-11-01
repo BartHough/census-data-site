@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import {GoogleApiKey} from '../APIKeys';
-// import "../styles/MapForm.css"
+import "../styles/MapForm.css"
 
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
@@ -66,7 +66,7 @@ export class MapForm extends Component {
     // Get the fromYear prop for selected item
     let fromYear
     this.state.tableData.forEach(table => {
-      if(table.id == tableId) {
+      if(table.id === tableId) {
         fromYear = table.fromYear
       }
     })
@@ -88,16 +88,6 @@ export class MapForm extends Component {
       [evt.target.name] : evt.target.value
     });
   }
-
-  // handleTimeStart(event) {
-  //   const timeStart = event.target.value
-  //   this.setState({ fields: { ...this.state.fields, timeStart } })
-  // }
-
-  // handleTimeEnd(event) {
-  //   const timeEnd = event.target.value
-  //   this.setState({ fields: { ...this.state.fields, timeEnd } })
-  // }
 
   findRegion(state) {
     const west = ['WA', 'OR', 'CA', 'ID', 'NV', 'MT', 'WY', 'UT', 'CO', 'AZ', 'NM']
@@ -266,88 +256,89 @@ export class MapForm extends Component {
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
         <Marker position={this.state.latlng} />
-        <form className="mapForm" onSubmit={this.getAPIGraphData} style={style.form}>
-          <div>
-            <Select
-              name='tableDropDown'
-              placeholder='Select Table'
-              style={style.select}
-              onChange={this.handleTableName}
-              options={this.state.dropDown}
-            />
-          </div>
-          <div>
-            <label htmlFor='timeStart'>Time Period Start</label>
-            <input 
-              name='timeStart' 
-              placeholder="Time Period Start" 
-              type="date" 
-              value={this.state.timeStart} 
-              onChange={this.handleChange} 
-            />
-          </div>
-          <div>
-            <label htmlFor='timeEnd'>Time Period End</label>
-            <input 
-              name='timeEnd' 
-              placeholder="Time Period End" 
-              type="date" 
-              value={this.state.timeEnd} 
-              onChange={this.handleChange} 
-            />
-          </div>
-          <div>
-            <label htmlFor='latitude'> Latitude </label>
-            <input 
-              readOnly
-              name='latitude' 
-              placeholder="Latitude" 
-              type="text" 
-              value={this.state.latlng.lat} 
-            />
-          </div>
-          <div>
-            <label htmlFor='longitude'> Longitude </label>
-            <input 
-              readOnly 
-              name='longitude'
-              placeholder="Longitude" 
-              type="text" 
-              value={this.state.latlng.lng} 
-            />
-          </div>
-          <div>
-            <label htmlFor='state'> State </label>
-            <input 
-              readOnly 
-              name='state'
-              placeholder="State" 
-              type="text" 
-              value={this.state.stateLong} 
-            />
-          </div>
-          <div>
-            <label htmlFor='postalCode'> Postal Code </label>
-            <input 
-              readOnly 
-              name='postalCode'
-              placeholder="Postal Code" 
-              type="text" 
-              value={this.state.postalCode} 
-            />
-          </div>
-          <div>
-            <label htmlFor='region'> Region </label>
-            <input 
-              readOnly
-              name='region' 
-              placeholder="Region" 
-              type="text" 
-              value={this.state.region} 
-            />
-          </div>
-          <button>Submit</button>
-        </form>
+        <div className="mapForm">
+          <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1>
+          <form id="formForMap" onSubmit={this.getAPIGraphData} style={style.form}>
+            <div className="section"><span>1</span>Select Report</div>
+            <div className="inner-wrap"> 
+              <Select
+                name='tableDropDown'
+                placeholder='Select Table'
+                style={style.select}
+                onChange={this.handleTableName}
+                options={this.state.dropDown}
+              />
+            </div>
+            <div className="section"><span>2</span>Time Period</div>
+            <div className="inner-wrap">
+              <label htmlFor='timeStart'>Time Period Start</label>
+              <input 
+                name='timeStart' 
+                placeholder="Time Period Start" 
+                type="date" 
+                value={this.state.timeStart} 
+                onChange={this.handleChange} 
+              />
+              <label htmlFor='timeEnd'>Time Period End</label>
+              <input 
+                name='timeEnd' 
+                placeholder="Time Period End" 
+                type="date" 
+                value={this.state.timeEnd} 
+                onChange={this.handleChange} 
+              />
+            </div>
+            <div className="section"><span>3</span>Latitude and Longitude</div>
+            <div className="inner-wrap">
+              <label htmlFor='latitude'> Latitude </label>
+              <input 
+                readOnly
+                name='latitude' 
+                placeholder="Latitude" 
+                type="text" 
+                value={this.state.latlng.lat} 
+              />
+              <label htmlFor='longitude'> Longitude </label>
+              <input 
+                readOnly 
+                name='longitude'
+                placeholder="Longitude" 
+                type="text" 
+                value={this.state.latlng.lng} 
+              />
+            </div>
+            <div className="section"><span>4</span>Location</div>
+            <div className="inner-wrap">
+              <label htmlFor='state'> State </label>
+              <input 
+                readOnly 
+                name='state'
+                placeholder="State" 
+                type="text" 
+                value={this.state.stateLong} 
+              />
+              <label htmlFor='postalCode'> Postal Code </label>
+              <input 
+                readOnly 
+                name='postalCode'
+                placeholder="Postal Code" 
+                type="text" 
+                value={this.state.postalCode} 
+              />
+              <label htmlFor='region'> Region </label>
+              <input 
+                readOnly
+                name='region' 
+                placeholder="Region" 
+                type="text" 
+                value={this.state.region} 
+              />
+            </div>
+            <div className="button-section">
+              <input type="submit" name="submit" />
+            </div>
+          </form>
+        </div>
         </Map>
       </div>
     );
