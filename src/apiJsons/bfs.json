@@ -1,0 +1,292 @@
+{
+    "bfs": [
+        {
+            "category_code": [
+                {
+                    "id": "BA_BA",
+                    "description": "Business Applications"
+                },
+                {
+                    "id": "BA_CBA",
+                    "description": "Business Applications from Corporations"
+                },
+                {
+                    "id": "BA_HBA",
+                    "description": "High-Propensity Business Applications"
+                },
+                {
+                    "id": "BA_WBA",
+                    "description": "Business Applications with Planned Wages"
+                },
+                {
+                    "id": "BF_BF4Q",
+                    "description": "Business Formations within Four Quarters"
+                },
+                {
+                    "id": "BF_BF8Q",
+                    "description": "Business Formations within Eight Quarters"
+                },
+                {
+                    "id": "BF_PBF4Q",
+                    "description": "Projected Business Formations within Four Quarters"
+                },
+                {
+                    "id": "BF_PBF8Q",
+                    "description": "Projected Business Formations within Eight Quarters"
+                },
+                {
+                    "id": "BF_SBF4Q",
+                    "description": "Spliced Business Formations within Four Quarters"
+                },
+                {
+                    "id": "BF_SBF8Q",
+                    "description": "Spliced Business Formations within Eight Quarters"
+                },
+                {
+                    "id": "BF_DUR4Q",
+                    "description": "Average Duration (in Quarters) from Business Application to Formation within Four Quarters"
+                },
+                {
+                    "id": "BF_DUR8Q",
+                    "description": "Average Duration (in Quarters) from Business Application to Formation within Eight Quarters"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "T",
+                    "description": "Total Applications"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                },
+                {
+                    "id": "NO",
+                    "description": "Northeast"
+                },
+                {
+                    "id": "MW",
+                    "description": "Midwest"
+                },
+                {
+                    "id": "SO",
+                    "description": "South"
+                },
+                {
+                    "id": "WE",
+                    "description": "West"
+                },
+                {
+                    "id": "AK",
+                    "description": "Alaska"
+                },
+                {
+                    "id": "AL",
+                    "description": "Alabama"
+                },
+                {
+                    "id": "AR",
+                    "description": "Arkansas"
+                },
+                {
+                    "id": "AZ",
+                    "description": "Arizona"
+                },
+                {
+                    "id": "CA",
+                    "description": "California"
+                },
+                {
+                    "id": "CO",
+                    "description": "Colorado"
+                },
+                {
+                    "id": "CT",
+                    "description": "Connecticut"
+                },
+                {
+                    "id": "DE",
+                    "description": "Delaware"
+                },
+                {
+                    "id": "DC",
+                    "description": "District of Columbia"
+                },
+                {
+                    "id": "FL",
+                    "description": "Florida"
+                },
+                {
+                    "id": "GA",
+                    "description": "Georgia"
+                },
+                {
+                    "id": "HI",
+                    "description": "Hawaii"
+                },
+                {
+                    "id": "ID",
+                    "description": "Idaho"
+                },
+                {
+                    "id": "IL",
+                    "description": "Illinois"
+                },
+                {
+                    "id": "IN",
+                    "description": "Indiana"
+                },
+                {
+                    "id": "IA",
+                    "description": "Iowa"
+                },
+                {
+                    "id": "KS",
+                    "description": "Kansas"
+                },
+                {
+                    "id": "KY",
+                    "description": "Kentucky"
+                },
+                {
+                    "id": "LA",
+                    "description": "Louisiana"
+                },
+                {
+                    "id": "ME",
+                    "description": "Maine"
+                },
+                {
+                    "id": "MD",
+                    "description": "Maryland"
+                },
+                {
+                    "id": "MA",
+                    "description": "Massachusetts"
+                },
+                {
+                    "id": "MI",
+                    "description": "Michigan"
+                },
+                {
+                    "id": "MN",
+                    "description": "Minnesota"
+                },
+                {
+                    "id": "MS",
+                    "description": "Mississippi"
+                },
+                {
+                    "id": "MO",
+                    "description": "Missouri"
+                },
+                {
+                    "id": "MT",
+                    "description": "Montana"
+                },
+                {
+                    "id": "NE",
+                    "description": "Nebraska"
+                },
+                {
+                    "id": "NV",
+                    "description": "Nevada"
+                },
+                {
+                    "id": "NH",
+                    "description": "New Hampshire"
+                },
+                {
+                    "id": "NJ",
+                    "description": "New Jersey"
+                },
+                {
+                    "id": "NM",
+                    "description": "New Mexico"
+                },
+                {
+                    "id": "NY",
+                    "description": "New York"
+                },
+                {
+                    "id": "NC",
+                    "description": "North Carolina"
+                },
+                {
+                    "id": "ND",
+                    "description": "North Dakota"
+                },
+                {
+                    "id": "OH",
+                    "description": "Ohio"
+                },
+                {
+                    "id": "OK",
+                    "description": "Oklahoma"
+                },
+                {
+                    "id": "OR",
+                    "description": "Oregon"
+                },
+                {
+                    "id": "PA",
+                    "description": "Pennsylvania"
+                },
+                {
+                    "id": "RI",
+                    "description": "Rhode Island"
+                },
+                {
+                    "id": "SC",
+                    "description": "South Carolina"
+                },
+                {
+                    "id": "SD",
+                    "description": "South Dakota"
+                },
+                {
+                    "id": "TN",
+                    "description": "Tennessee"
+                },
+                {
+                    "id": "TX",
+                    "description": "Texas"
+                },
+                {
+                    "id": "UT",
+                    "description": "Utah"
+                },
+                {
+                    "id": "VT",
+                    "description": "Vermont"
+                },
+                {
+                    "id": "VA",
+                    "description": "Virginia"
+                },
+                {
+                    "id": "WA",
+                    "description": "Washington"
+                },
+                {
+                    "id": "WV",
+                    "description": "West Virginia"
+                },
+                {
+                    "id": "WI",
+                    "description": "Wisconsin"
+                },
+                {
+                    "id": "WY",
+                    "description": "Wyoming"
+                }
+            ]
+        }
+    ]
+}

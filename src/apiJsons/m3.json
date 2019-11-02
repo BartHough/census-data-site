@@ -1,0 +1,432 @@
+{
+    "m3": [
+        {
+            "category_code": [
+                {
+                    "id": "MTM",
+                    "description": "Total Manufacturing"
+                },
+                {
+                    "id": "MXT",
+                    "description": "Manufacturing Excluding Transportation"
+                },
+                {
+                    "id": "MXD",
+                    "description": "Manufacturing Excluding Defense"
+                },
+                {
+                    "id": "MTU",
+                    "description": "Manufacturing with Unfilled Orders"
+                },
+                {
+                    "id": "MDM",
+                    "description": "Durable Goods"
+                },
+                {
+                    "id": "21S",
+                    "description": "Wood Products"
+                },
+                {
+                    "id": "27S",
+                    "description": "Nonmetallic Mineral Products"
+                },
+                {
+                    "id": "31S",
+                    "description": "Primary Metals"
+                },
+                {
+                    "id": "31A",
+                    "description": "Iron and Steel Mills and Ferroalloy and Steel Product Manufacturing"
+                },
+                {
+                    "id": "ANM",
+                    "description": "Aluminum and Nonferrous Metal Products"
+                },
+                {
+                    "id": "31C",
+                    "description": "Ferrous Metal Foundries"
+                },
+                {
+                    "id": "32S",
+                    "description": "Fabricated Metal Products"
+                },
+                {
+                    "id": "33S",
+                    "description": "Machinery"
+                },
+                {
+                    "id": "33A",
+                    "description": "Farm Machinery and Equipment Manufacturing"
+                },
+                {
+                    "id": "33C",
+                    "description": "Construction Machinery Manufacturing"
+                },
+                {
+                    "id": "33D",
+                    "description": "Mining, Oil, and Gas Field Machinery Manufacturing"
+                },
+                {
+                    "id": "33E",
+                    "description": "Industrial Machinery Manufacturing"
+                },
+                {
+                    "id": "33G",
+                    "description": "Photographic Equipment Manufacturing"
+                },
+                {
+                    "id": "33H",
+                    "description": "Ventilation, Heating, Air-conditioning, and Refrigeration Equipment Manufacturing"
+                },
+                {
+                    "id": "33I",
+                    "description": "Metalworking Machinery Manufacturing"
+                },
+                {
+                    "id": "TGP",
+                    "description": "Turbines, Generators, and Other Power Transmission Equipment"
+                },
+                {
+                    "id": "33M",
+                    "description": "Material Handling Equipment Manufacturing"
+                },
+                {
+                    "id": "34S",
+                    "description": "Computer and Electronic Products"
+                },
+                {
+                    "id": "34A",
+                    "description": "Electronic Computer Manufacturing"
+                },
+                {
+                    "id": "34B",
+                    "description": "Computer Storage Device Manufacturing"
+                },
+                {
+                    "id": "34C",
+                    "description": "Other Computer Peripheral Equipment Manufacturing"
+                },
+                {
+                    "id": "34D",
+                    "description": "Communications Equipment Manufacturing, Nondefense"
+                },
+                {
+                    "id": "34E",
+                    "description": "Communications Equipment Manufacturing, Defense"
+                },
+                {
+                    "id": "34F",
+                    "description": "Audio and Video Equipment"
+                },
+                {
+                    "id": "34G",
+                    "description": "Semiconductor and Related Device Manufacturing"
+                },
+                {
+                    "id": "34H",
+                    "description": "Other Electronic Component Manufacturing"
+                },
+                {
+                    "id": "34I",
+                    "description": "Search and Navigation Equipment, Nondefense"
+                },
+                {
+                    "id": "34J",
+                    "description": "Search and Navigation Equipment, Defense"
+                },
+                {
+                    "id": "34K",
+                    "description": "Electromedical, Measuring, and Control Instrument Manufacturing"
+                },
+                {
+                    "id": "35S",
+                    "description": "Electrical Equipment, Appliances and Components"
+                },
+                {
+                    "id": "35A",
+                    "description": "Electric Lighting Equipment Manufacturing"
+                },
+                {
+                    "id": "35B",
+                    "description": "Household Appliance Manufacturing"
+                },
+                {
+                    "id": "35C",
+                    "description": "Electrical Equipment Manufacturing"
+                },
+                {
+                    "id": "35D",
+                    "description": "Battery Manufacturing"
+                },
+                {
+                    "id": "36S",
+                    "description": "Transportation Equipment"
+                },
+                {
+                    "id": "36A",
+                    "description": "Automobile Manufacturing"
+                },
+                {
+                    "id": "36B",
+                    "description": "Light Truck and Utility Vehicle Manufacturing"
+                },
+                {
+                    "id": "36C",
+                    "description": "Heavy Duty Truck Manufacturing"
+                },
+                {
+                    "id": "BTP",
+                    "description": "Motor Vehicle Bodies, Trailers, and Parts"
+                },
+                {
+                    "id": "NAP",
+                    "description": "Nondefense Aircraft and Parts"
+                },
+                {
+                    "id": "DAP",
+                    "description": "Defense Aircraft and Parts"
+                },
+                {
+                    "id": "36Z",
+                    "description": "Ships and Boats"
+                },
+                {
+                    "id": "37S",
+                    "description": "Furniture and Related Products"
+                },
+                {
+                    "id": "39S",
+                    "description": "Miscellaneous Products"
+                },
+                {
+                    "id": "MNM",
+                    "description": "Nondurable Goods"
+                },
+                {
+                    "id": "11S",
+                    "description": "Food Products"
+                },
+                {
+                    "id": "11A",
+                    "description": "Grain and Oilseed Milling"
+                },
+                {
+                    "id": "11B",
+                    "description": "Dairy Product Manufacturing"
+                },
+                {
+                    "id": "11C",
+                    "description": "Meat, Poultry, and Seafood Product Processing"
+                },
+                {
+                    "id": "12S",
+                    "description": "Beverage and Tobacco Products"
+                },
+                {
+                    "id": "12A",
+                    "description": "Beverage Manufacturing"
+                },
+                {
+                    "id": "12B",
+                    "description": "Tobacco Manufacturing"
+                },
+                {
+                    "id": "13S",
+                    "description": "Textile Mills"
+                },
+                {
+                    "id": "14S",
+                    "description": "Textile Products"
+                },
+                {
+                    "id": "15S",
+                    "description": "Apparel"
+                },
+                {
+                    "id": "16S",
+                    "description": "Leather and Allied Products"
+                },
+                {
+                    "id": "22S",
+                    "description": "Paper Products"
+                },
+                {
+                    "id": "22A",
+                    "description": "Pulp, Paper, and Paperboard Mills"
+                },
+                {
+                    "id": "22B",
+                    "description": "Paperboard Container Manufacturing"
+                },
+                {
+                    "id": "23S",
+                    "description": "Printing"
+                },
+                {
+                    "id": "24S",
+                    "description": "Petroleum and Coal Products"
+                },
+                {
+                    "id": "24A",
+                    "description": "Petroleum Refineries"
+                },
+                {
+                    "id": "25S",
+                    "description": "Chemical Products"
+                },
+                {
+                    "id": "25A",
+                    "description": "Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing"
+                },
+                {
+                    "id": "25B",
+                    "description": "Pharmaceutical and Medicine Manufacturing"
+                },
+                {
+                    "id": "25C",
+                    "description": "Paint, Coating, and Adhesive, Manufacturing"
+                },
+                {
+                    "id": "26S",
+                    "description": "Plastics and Rubber Products"
+                },
+                {
+                    "id": "CMS",
+                    "description": "Construction Materials and Supplies"
+                },
+                {
+                    "id": "ITI",
+                    "description": "Information Technology Industries"
+                },
+                {
+                    "id": "CRP",
+                    "description": "Computers and Related Products"
+                },
+                {
+                    "id": "MVP",
+                    "description": "Motor Vehicles and Parts"
+                },
+                {
+                    "id": "TCG",
+                    "description": "Capital Goods"
+                },
+                {
+                    "id": "NDE",
+                    "description": "Nondefense Capital Goods"
+                },
+                {
+                    "id": "NXA",
+                    "description": "Nondefense Capital Goods Excluding Aircraft"
+                },
+                {
+                    "id": "DEF",
+                    "description": "Defense Capital Goods"
+                },
+                {
+                    "id": "COG",
+                    "description": "Consumer Goods"
+                },
+                {
+                    "id": "CDG",
+                    "description": "Consumer Durable Goods"
+                },
+                {
+                    "id": "CNG",
+                    "description": "Consumer Nondurable Goods"
+                },
+                {
+                    "id": "DXT",
+                    "description": "Durable Goods Excluding Transportation"
+                },
+                {
+                    "id": "DXD",
+                    "description": "Durable Goods Excluding Defense"
+                },
+                {
+                    "id": "34X",
+                    "description": "Communication Equipment"
+                },
+                {
+                    "id": "ODG",
+                    "description": "Other Durable Goods"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "VS",
+                    "description": "Value of Shipments"
+                },
+                {
+                    "id": "NO",
+                    "description": "New Orders"
+                },
+                {
+                    "id": "UO",
+                    "description": "Unfilled Orders"
+                },
+                {
+                    "id": "TI",
+                    "description": "Total Inventories"
+                },
+                {
+                    "id": "MI",
+                    "description": "Materials and Supplies Inventories"
+                },
+                {
+                    "id": "WI",
+                    "description": "Work in Process Inventories"
+                },
+                {
+                    "id": "FI",
+                    "description": "Finished Goods Inventories"
+                },
+                {
+                    "id": "IS",
+                    "description": "Inventories to Shipments Ratios"
+                },
+                {
+                    "id": "US",
+                    "description": "Unfilled Orders to Shipments Ratios"
+                },
+                {
+                    "id": "MPCVS",
+                    "description": "Value of Shipments Percent Change Monthly"
+                },
+                {
+                    "id": "MPCNO",
+                    "description": "New Orders Percent Change Monthly"
+                },
+                {
+                    "id": "MPCUO",
+                    "description": "Unfilled Orders Percent Change Monthly"
+                },
+                {
+                    "id": "MPCTI",
+                    "description": "Total Inventories Percent Change Monthly"
+                },
+                {
+                    "id": "MPCMI",
+                    "description": "Materials & Supplies Inventories Percent Change Monthly"
+                },
+                {
+                    "id": "MPCWI",
+                    "description": "Work in Progress Inventories Percent Change Monthly"
+                },
+                {
+                    "id": "MPCFI",
+                    "description": "Finished Goods Inventories Percent Change Monthly"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

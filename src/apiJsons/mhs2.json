@@ -1,0 +1,56 @@
+{
+    "mhs2": [
+        {
+            "category_code": [
+                {
+                    "id": "D",
+                    "description": "Doubles"
+                },
+                {
+                    "id": "M",
+                    "description": "Multi-Section"
+                },
+                {
+                    "id": "S",
+                    "description": "Singles"
+                },
+                {
+                    "id": "T",
+                    "description": "Total Homes"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "ISR",
+                    "description": "Intended for Sale for Residential Use"
+                },
+                {
+                    "id": "NR",
+                    "description": "For Non-Residential or Other Use"
+                },
+                {
+                    "id": "SH",
+                    "description": "Total Shipments"
+                },
+                {
+                    "id": "SP",
+                    "description": "Average Sales Price (2014-Present)"
+                },
+                {
+                    "id": "SPR",
+                    "description": "Sold and Placed for Residential Use (2014-Present)"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

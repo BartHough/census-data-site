@@ -1,0 +1,708 @@
+{
+    "qss": [
+        {
+            "category_code": [
+                {
+                    "id": "22T",
+                    "description": "22: Utilities"
+                },
+                {
+                    "id": "2211T",
+                    "description": "2211: Electric Power Generation, Transmission and Distribution"
+                },
+                {
+                    "id": "22121T",
+                    "description": "2212: Natural Gas Distribution"
+                },
+                {
+                    "id": "2213T",
+                    "description": "2213: Water, Sewage and Other Systems"
+                },
+                {
+                    "id": "4849YT",
+                    "description": "48pt-49: Transportation and Warehousing"
+                },
+                {
+                    "id": "481T",
+                    "description": "481: Air Transportation"
+                },
+                {
+                    "id": "483T",
+                    "description": "483: Water Transportation"
+                },
+                {
+                    "id": "4831T",
+                    "description": "4831: Deep Sea, Coastal, and Great Lakes Water Transportation"
+                },
+                {
+                    "id": "4832T",
+                    "description": "4832: Inland Water Transportation"
+                },
+                {
+                    "id": "484T",
+                    "description": "484: Truck Transportation"
+                },
+                {
+                    "id": "4841T",
+                    "description": "4841: General Freight Trucking"
+                },
+                {
+                    "id": "48412T",
+                    "description": "48412: General Freight Trucking, Long-Distance"
+                },
+                {
+                    "id": "4842T",
+                    "description": "4842: Specialized Freight Trucking"
+                },
+                {
+                    "id": "485T",
+                    "description": "485: Transit and Ground Passenger Transportation"
+                },
+                {
+                    "id": "486T",
+                    "description": "486: Pipeline Transportation"
+                },
+                {
+                    "id": "487T",
+                    "description": "487: Scenic and Sightseeing Transportation"
+                },
+                {
+                    "id": "488T",
+                    "description": "488: Support Activities For Transportation"
+                },
+                {
+                    "id": "492T",
+                    "description": "492: Couriers and Messengers"
+                },
+                {
+                    "id": "493T",
+                    "description": "493: Warehousing and Storage"
+                },
+                {
+                    "id": "51T",
+                    "description": "51: Information"
+                },
+                {
+                    "id": "511T",
+                    "description": "511: Publishing Industries (Except Internet)"
+                },
+                {
+                    "id": "51111T",
+                    "description": "51111: Newspaper Publishers"
+                },
+                {
+                    "id": "51112T",
+                    "description": "51112: Periodical Publishers"
+                },
+                {
+                    "id": "5111XT",
+                    "description": "5111pt: Book, Directory and Mailing List, and Other Publishers"
+                },
+                {
+                    "id": "5112T",
+                    "description": "5112: Software Publishers"
+                },
+                {
+                    "id": "512T",
+                    "description": "512: Motion Picture and Sound Recording Industries"
+                },
+                {
+                    "id": "515T",
+                    "description": "515: Broadcasting (Except Internet)"
+                },
+                {
+                    "id": "5151T",
+                    "description": "5151: Radio and Television Broadcasting"
+                },
+                {
+                    "id": "5152T",
+                    "description": "5152: Cable and Other Subscription Programming"
+                },
+                {
+                    "id": "517T",
+                    "description": "517: Telecommunications"
+                },
+                {
+                    "id": "5171T",
+                    "description": "5171: Wired Telecommunications Carriers"
+                },
+                {
+                    "id": "5172T",
+                    "description": "5172: Wireless Telecommunications Carriers (Except Satellite)"
+                },
+                {
+                    "id": "517YT",
+                    "description": "517pt: Other Telecommunications"
+                },
+                {
+                    "id": "518T",
+                    "description": "518: Data Processing, Hosting, and Related Services"
+                },
+                {
+                    "id": "519T",
+                    "description": "519: Other Information Services"
+                },
+                {
+                    "id": "52T",
+                    "description": "52: Finance and Insurance"
+                },
+                {
+                    "id": "52PTT",
+                    "description": "52pt: Finance and Insurance (Except Monetary Authorities-Central Bank)"
+                },
+                {
+                    "id": "5211T",
+                    "description": "521: Monetary Authorities-Central Bank"
+                },
+                {
+                    "id": "522T",
+                    "description": "522: Credit Intermediation and Related Activities"
+                },
+                {
+                    "id": "5221T",
+                    "description": "5221: Depository Credit Intermediation"
+                },
+                {
+                    "id": "5222T",
+                    "description": "5222: Nondepository Credit Intermediation"
+                },
+                {
+                    "id": "5223T",
+                    "description": "5223: Activities Related to Credit Intermediation"
+                },
+                {
+                    "id": "523T",
+                    "description": "523: Securities, Commodity Contracts, and Other Financial Investments and Related Activities"
+                },
+                {
+                    "id": "5231T",
+                    "description": "5231: Securities and Commodity Contracts Intermediation and Brokerage"
+                },
+                {
+                    "id": "52321T",
+                    "description": "5232: Securities and Commodity Exchanges"
+                },
+                {
+                    "id": "5239T",
+                    "description": "5239: Other Financial Investment Activities"
+                },
+                {
+                    "id": "524T",
+                    "description": "524: Insurance Carriers and Related Activities"
+                },
+                {
+                    "id": "5241T",
+                    "description": "5241: Insurance Carriers"
+                },
+                {
+                    "id": "5242T",
+                    "description": "5242: Agencies, Brokerages, and Other Insurance Related Activities"
+                },
+                {
+                    "id": "53T",
+                    "description": "53: Real Estate and Rental and Leasing"
+                },
+                {
+                    "id": "531T",
+                    "description": "531: Real Estate"
+                },
+                {
+                    "id": "5311T",
+                    "description": "5311: Lessors Of Real Estate"
+                },
+                {
+                    "id": "5312T",
+                    "description": "5312: Offices Of Real Estate Agents and Brokers"
+                },
+                {
+                    "id": "5313T",
+                    "description": "5313: Activities Related to Real Estate"
+                },
+                {
+                    "id": "532T",
+                    "description": "532: Rental and Leasing Services"
+                },
+                {
+                    "id": "5321T",
+                    "description": "5321: Automotive Equipment Rental and Leasing"
+                },
+                {
+                    "id": "53211T",
+                    "description": "53211: Passenger Car Rental and Leasing"
+                },
+                {
+                    "id": "53212T",
+                    "description": "53212: Truck, Utility Trailer, and RV (Recreational Vehicle) Rental and Leasing"
+                },
+                {
+                    "id": "5322T",
+                    "description": "5322: Consumer Goods Rental"
+                },
+                {
+                    "id": "5323T",
+                    "description": "5323: General Rental Centers"
+                },
+                {
+                    "id": "5324T",
+                    "description": "5324: Commercial and Industrial Machinery and Equipment Rental and Leasing"
+                },
+                {
+                    "id": "533T",
+                    "description": "533: Lessors Of Nonfinancial Intangible Assets (Except Copyrighted Works)"
+                },
+                {
+                    "id": "54T",
+                    "description": "54: Professional, Scientific, and Technical Services"
+                },
+                {
+                    "id": "5411T",
+                    "description": "5411: Legal Services"
+                },
+                {
+                    "id": "5412T",
+                    "description": "5412: Accounting, Tax Preparation, Bookkeeping, and Payroll Services"
+                },
+                {
+                    "id": "5413T",
+                    "description": "5413: Architectural, Engineering, and Related Services"
+                },
+                {
+                    "id": "5413XT",
+                    "description": "5413pt: Architectural and Related Services"
+                },
+                {
+                    "id": "54133T",
+                    "description": "54133: Engineering Services"
+                },
+                {
+                    "id": "5414T",
+                    "description": "5414: Specialized Design Services"
+                },
+                {
+                    "id": "5415T",
+                    "description": "5415: Computer Systems Design and Related Services"
+                },
+                {
+                    "id": "5416T",
+                    "description": "5416: Management, Scientific, and Technical Consulting Services"
+                },
+                {
+                    "id": "5417T",
+                    "description": "5417: Scientific Research and Development Services"
+                },
+                {
+                    "id": "5418T",
+                    "description": "5418: Advertising, Public Relations, and Related Services"
+                },
+                {
+                    "id": "5419T",
+                    "description": "5419: Other Professional, Scientific, and Technical Services"
+                },
+                {
+                    "id": "56T",
+                    "description": "56: Administrative and Support and Waste Management and Remediation Services"
+                },
+                {
+                    "id": "561T",
+                    "description": "561: Administrative and Support Services"
+                },
+                {
+                    "id": "5613T",
+                    "description": "5613: Employment Services"
+                },
+                {
+                    "id": "5615T",
+                    "description": "5615: Travel Arrangement and Reservation Services"
+                },
+                {
+                    "id": "561YT",
+                    "description": "561pt: Other Administrative and Support Services"
+                },
+                {
+                    "id": "562T",
+                    "description": "562: Waste Management and Remediation Services"
+                },
+                {
+                    "id": "61A",
+                    "description": "61: Educational Services"
+                },
+                {
+                    "id": "6114A",
+                    "description": "6114: Business Schools and Computer and Management Training"
+                },
+                {
+                    "id": "61151A",
+                    "description": "61151: Technical and Trade Schools"
+                },
+                {
+                    "id": "6116A",
+                    "description": "6116: Other Schools and Instruction"
+                },
+                {
+                    "id": "61171A",
+                    "description": "6117: Educational Support Services"
+                },
+                {
+                    "id": "62A",
+                    "description": "62: Health Care and Social Assistance"
+                },
+                {
+                    "id": "62T",
+                    "description": "62: Health Care and Social Assistance - Taxable"
+                },
+                {
+                    "id": "62E",
+                    "description": "62: Health Care and Social Assistance - Tax-Exempt"
+                },
+                {
+                    "id": "621A",
+                    "description": "621: Ambulatory Health Care Services"
+                },
+                {
+                    "id": "621T",
+                    "description": "621: Ambulatory Health Care Services - Taxable"
+                },
+                {
+                    "id": "621E",
+                    "description": "621: Ambulatory Health Care Services - Tax-Exempt"
+                },
+                {
+                    "id": "6211T",
+                    "description": "6211: Offices Of Physicians - Taxable"
+                },
+                {
+                    "id": "6212T",
+                    "description": "6212: Offices Of Dentists - Taxable"
+                },
+                {
+                    "id": "6213T",
+                    "description": "6213: Offices Of Other Health Practitioners - Taxable"
+                },
+                {
+                    "id": "6214A",
+                    "description": "6214: Outpatient Care Centers"
+                },
+                {
+                    "id": "6214T",
+                    "description": "6214: Outpatient Care Centers - Taxable"
+                },
+                {
+                    "id": "6214E",
+                    "description": "6214: Outpatient Care Centers - Tax-Exempt"
+                },
+                {
+                    "id": "6215T",
+                    "description": "6215: Medical and Diagnostic Laboratories - Taxable"
+                },
+                {
+                    "id": "6216A",
+                    "description": "6216: Home Health Care Services"
+                },
+                {
+                    "id": "6216T",
+                    "description": "6216: Home Health Care Services - Taxable"
+                },
+                {
+                    "id": "6216E",
+                    "description": "6216: Home Health Care Services - Tax-Exempt"
+                },
+                {
+                    "id": "6219A",
+                    "description": "6219: Other Ambulatory Health Care Services"
+                },
+                {
+                    "id": "6219T",
+                    "description": "6219: Other Ambulatory Health Care Services - Taxable"
+                },
+                {
+                    "id": "6219E",
+                    "description": "6219: Other Ambulatory Health Care Services - Tax-Exempt"
+                },
+                {
+                    "id": "622A",
+                    "description": "622: Hospitals"
+                },
+                {
+                    "id": "622T",
+                    "description": "622: Hospitals - Taxable"
+                },
+                {
+                    "id": "622E",
+                    "description": "622: Hospitals - Tax-Exempt"
+                },
+                {
+                    "id": "6221A",
+                    "description": "6221: General Medical and Surgical Hospitals"
+                },
+                {
+                    "id": "6221E",
+                    "description": "6221: General Medical and Surgical Hospitals - Tax-Exempt"
+                },
+                {
+                    "id": "6221T",
+                    "description": "6221: General Medical and Surgical Hospitals - Taxable"
+                },
+                {
+                    "id": "6222A",
+                    "description": "6222: Psychiatric and Substance Abuse Hospitals"
+                },
+                {
+                    "id": "6222E",
+                    "description": "6222: Psychiatric and Substance Abuse Hospitals - Tax-Exempt"
+                },
+                {
+                    "id": "6222T",
+                    "description": "6222: Psychiatric and Substance Abuse Hospitals - Taxable"
+                },
+                {
+                    "id": "6223A",
+                    "description": "6223: Specialty (Except Psychiatric and Substance Abuse) Hospitals"
+                },
+                {
+                    "id": "6223E",
+                    "description": "6223: Specialty (Except Psychiatric and Substance Abuse) Hospitals - Tax-Exempt"
+                },
+                {
+                    "id": "6223T",
+                    "description": "6223: Specialty (Except Psychiatric and Substance Abuse) Hospitals - Taxable"
+                },
+                {
+                    "id": "623A",
+                    "description": "623: Nursing and Residential Care Facilities"
+                },
+                {
+                    "id": "623T",
+                    "description": "623: Nursing and Residential Care Facilities - Taxable"
+                },
+                {
+                    "id": "623E",
+                    "description": "623: Nursing and Residential Care Facilities - Tax-Exempt"
+                },
+                {
+                    "id": "624A",
+                    "description": "624: Social Assistance"
+                },
+                {
+                    "id": "624T",
+                    "description": "624: Social Assistance - Taxable"
+                },
+                {
+                    "id": "624E",
+                    "description": "624: Social Assistance - Tax-Exempt"
+                },
+                {
+                    "id": "6241A",
+                    "description": "6241: Individual and Family Services"
+                },
+                {
+                    "id": "6242A",
+                    "description": "6242: Community Food and Housing, and Emergency and Other Relief Services"
+                },
+                {
+                    "id": "6243A",
+                    "description": "6243: Vocational Rehabilitation Services"
+                },
+                {
+                    "id": "6244A",
+                    "description": "6244: Child Day Care Services"
+                },
+                {
+                    "id": "6244T",
+                    "description": "6244: Child Day Care Services - Taxable"
+                },
+                {
+                    "id": "6244E",
+                    "description": "6244: Child Day Care Services - Tax-Exempt"
+                },
+                {
+                    "id": "71A",
+                    "description": "71: Arts, Entertainment, and Recreation"
+                },
+                {
+                    "id": "71T",
+                    "description": "71: Arts, Entertainment, and Recreation - Taxable"
+                },
+                {
+                    "id": "71E",
+                    "description": "71: Arts, Entertainment, and Recreation - Tax-Exempt"
+                },
+                {
+                    "id": "711A",
+                    "description": "711: Performing Arts, Spectator Sports, and Related Industries"
+                },
+                {
+                    "id": "711T",
+                    "description": "711: Performing Arts, Spectator Sports, and Related Industries - Taxable"
+                },
+                {
+                    "id": "711E",
+                    "description": "711: Performing Arts, Spectator Sports, and Related Industries - Tax-Exempt"
+                },
+                {
+                    "id": "7111A",
+                    "description": "7111: Performing Arts Companies"
+                },
+                {
+                    "id": "7111T",
+                    "description": "7111: Performing Arts Companies - Taxable"
+                },
+                {
+                    "id": "7111E",
+                    "description": "7111: Performing Arts Companies - Tax-Exempt"
+                },
+                {
+                    "id": "7112T",
+                    "description": "7112: Spectator Sports"
+                },
+                {
+                    "id": "7113A",
+                    "description": "7113: Promoters Of Performing Arts, Sports, and Similar Events"
+                },
+                {
+                    "id": "7113T",
+                    "description": "7113: Promoters Of Performing Arts, Sports, and Similar Events - Taxable"
+                },
+                {
+                    "id": "7113E",
+                    "description": "7113: Promoters Of Performing Arts, Sports, and Similar Events - Tax-Exempt"
+                },
+                {
+                    "id": "71141T",
+                    "description": "7114: Agents and Managers For Artists, Athletes, Entertainers and Other Public Figures"
+                },
+                {
+                    "id": "71151T",
+                    "description": "7115: Independent Artists, Writers, and Performers"
+                },
+                {
+                    "id": "712A",
+                    "description": "712: Museums, Historical Sites, and Similar Institutions"
+                },
+                {
+                    "id": "712E",
+                    "description": "712: Museums, Historical Sites, and Similar Institutions - Tax-Exempt"
+                },
+                {
+                    "id": "713A",
+                    "description": "713: Amusement, Gambling, and Recreation Industries"
+                },
+                {
+                    "id": "713T",
+                    "description": "713: Amusement, Gambling, and Recreation Industries - Taxable"
+                },
+                {
+                    "id": "713E",
+                    "description": "713: Amusement, Gambling, and Recreation Industries - Tax-Exempt"
+                },
+                {
+                    "id": "7131T",
+                    "description": "7131: Amusement Parks and Arcades"
+                },
+                {
+                    "id": "7132T",
+                    "description": "7132: Gambling Industries"
+                },
+                {
+                    "id": "7139A",
+                    "description": "7139: Other Amusement and Recreation Industries"
+                },
+                {
+                    "id": "7139T",
+                    "description": "7139: Other Amusement and Recreation Industries - Taxable"
+                },
+                {
+                    "id": "7139E",
+                    "description": "7139: Other Amusement and Recreation Industries - Tax-Exempt"
+                },
+                {
+                    "id": "721T",
+                    "description": "721: Accommodation"
+                },
+                {
+                    "id": "7211T",
+                    "description": "7211: Traveler Accommodation"
+                },
+                {
+                    "id": "7212T",
+                    "description": "7212: RV (Recreational Vehicle) Parks and Recreational Camps"
+                },
+                {
+                    "id": "7213T",
+                    "description": "7213: Rooming and Boarding Houses"
+                },
+                {
+                    "id": "81A",
+                    "description": "81: Other Services (Except Public Administration)"
+                },
+                {
+                    "id": "811T",
+                    "description": "811: Repair and Maintenance"
+                },
+                {
+                    "id": "8111T",
+                    "description": "8111: Automotive Repair and Maintenance"
+                },
+                {
+                    "id": "8112T",
+                    "description": "8112: Electronic and Precision Equipment Repair and Maintenance"
+                },
+                {
+                    "id": "81131T",
+                    "description": "8113: Commercial and Industrial Machinery and Equipment (Except Automotive and Electronic) Repair and Maintenance"
+                },
+                {
+                    "id": "8114T",
+                    "description": "8114: Personal and Household Goods Repair and Maintenance"
+                },
+                {
+                    "id": "812T",
+                    "description": "812: Personal and Laundry Services"
+                },
+                {
+                    "id": "8121T",
+                    "description": "8121: Personal Care Services"
+                },
+                {
+                    "id": "8122T",
+                    "description": "8122: Death Care Services"
+                },
+                {
+                    "id": "8123T",
+                    "description": "8123: Drycleaning and Laundry Services"
+                },
+                {
+                    "id": "8129T",
+                    "description": "8129: Other Personal Services"
+                },
+                {
+                    "id": "813E",
+                    "description": "813: Religious, Grantmaking, Civic, Professional, and Similar Organizations - Tax-Exempt"
+                },
+                {
+                    "id": "000000A",
+                    "description": "Selected Services Total"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "QREV",
+                    "description": "Total Revenue"
+                },
+                {
+                    "id": "PQREV",
+                    "description": "Total Revenue Percent Change"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}
