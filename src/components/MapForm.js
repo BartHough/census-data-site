@@ -3,6 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import {GoogleApiKey} from '../APIKeys';
+import "../styles/MapForm.css"
 
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
@@ -33,7 +34,6 @@ export class MapForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fields: {
         latlng: {
           lat: 41,
           lng: -108.3
@@ -49,15 +49,15 @@ export class MapForm extends Component {
         graphData: "",
         variable: "",
         timeStart: "",
-        timeEnd: ""
-      },
+        timeEnd: "",
       tableData: [],
       dropDown: []
     }
-    this.handleTableName = this.handleTableName.bind(this)
-    this.handleVariable = this.handleVariable.bind(this)
-    this.handleTimeStart = this.handleTimeStart.bind(this)
-    this.handleTimeEnd = this.handleTimeEnd.bind(this)
+    this.handleTableName = this.handleTableName.bind(this);
+    this.handleVariable = this.handleVariable.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleTimeStart = this.handleTimeStart.bind(this)
+    // this.handleTimeEnd = this.handleTimeEnd.bind(this)
   }
 
   handleTableName(selectedOption) {
@@ -66,33 +66,27 @@ export class MapForm extends Component {
     // Get the fromYear prop for selected item
     let fromYear
     this.state.tableData.forEach(table => {
-      if(table.id == tableId) {
+      if(table.id === tableId) {
         fromYear = table.fromYear
       }
     })
     this.setState({
-      fields: {
-        ...this.state.fields,
+        ...this.state,
         tableName,
         tableId,
         fromYear
-      }
     })
   }
 
   handleVariable(event) {
     const variable = event.target.value
-    this.setState({ fields: { ...this.state.fields, variable } })
+    this.setState({ ...this.state, variable })
   }
 
-  handleTimeStart(event) {
-    const timeStart = event.target.value
-    this.setState({ fields: { ...this.state.fields, timeStart } })
-  }
-
-  handleTimeEnd(event) {
-    const timeEnd = event.target.value
-    this.setState({ fields: { ...this.state.fields, timeEnd } })
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name] : evt.target.value
+    });
   }
 
   findRegion(state) {
@@ -139,8 +133,7 @@ export class MapForm extends Component {
           });
           const region = this.findRegion(stateShort)
           this.setState({
-            fields: {
-              ...this.state.fields,
+              ...this.state,
               latlng: {
                 lat,
                 lng
@@ -150,7 +143,6 @@ export class MapForm extends Component {
               stateShort,
               postalCode,
               region
-            }
           })
         }
       )
@@ -160,13 +152,11 @@ export class MapForm extends Component {
     const { lat, lng } = await this.getcurrentLocation();
     await this.getAPIData();
     this.setState(prev => ({
-      fields: {
-        ...prev.fields,
+        ...prev,
         latlng: {
           lat,
           lng
-        }
-      },
+        },
       currentLocation: {
         lat,
         lng
@@ -186,7 +176,7 @@ export class MapForm extends Component {
 
   getAPIGraphData = (event) => {
     event.preventDefault()
-    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.fields.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fields.fromYear}`)
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fromYear}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -194,7 +184,7 @@ export class MapForm extends Component {
           graphData: data
         });
         console.log(this.state.graphData)
-        console.log(`fromYear: ${this.state.fields.fromYear}`)
+        console.log(`fromYear: ${this.state.fromYear}`)
       })
       .catch(console.log)
   }
@@ -260,39 +250,95 @@ export class MapForm extends Component {
         <Map
           google={this.props.google}
           style={style.map}
-          initialCenter={this.state.fields.latlng}
-          center={this.state.fields.latlng}
+          initialCenter={this.state.latlng}
+          center={this.state.latlng}
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
-          <Marker position={this.state.fields.latlng} />
-          <form onSubmit={this.getAPIGraphData} style={style.form}>
-            <Select
-              placeholder='Select Table'
-              style={style.select}
-              onChange={this.handleTableName}
-              options={this.state.dropDown}
-            />
-            <br></br>
-            <label>Time Period Start</label>
-            <input placeholder="Time Period Start" type="date" value={this.state.fields.timeStart} onChange={this.handleTimeStart} />
-            <label>Time Period End</label>
-            <input placeholder="Time Period End" type="date" value={this.state.fields.timeEnd} onChange={this.handleTimeEnd} />
-            <br></br>
-            <label> Latitude </label>
-            <input readOnly placeholder="Latitude" type="text" value={this.state.fields.latlng.lat} />
-            <label> Longitude </label>
-            <input readOnly placeholder="Longitude" type="text" value={this.state.fields.latlng.lng} />
-            <label> State </label>
-            <input readOnly placeholder="State" type="text" value={this.state.fields.stateLong} />
-            <br></br>
-            <label> Postal Code </label>
-            <input readOnly placeholder="Postal Code" type="text" value={this.state.fields.postalCode} />
-            <label> Region </label>
-            <input readOnly placeholder="Region" type="text" value={this.state.fields.region} />
-            <br></br>
-            <input value="Submit" type="submit" />
+        <Marker position={this.state.latlng} />
+        <div className="mapForm">
+          <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1>
+          <form id="formForMap" onSubmit={this.getAPIGraphData} style={style.form}>
+            <div className="section"><span>1</span>Select Report</div>
+            <div className="inner-wrap"> 
+              <Select
+                name='tableDropDown'
+                placeholder='Select Table'
+                style={style.select}
+                onChange={this.handleTableName}
+                options={this.state.dropDown}
+              />
+            </div>
+            <div className="section"><span>2</span>Time Period</div>
+            <div className="inner-wrap">
+              <label htmlFor='timeStart'>Time Period Start</label>
+              <input 
+                name='timeStart' 
+                placeholder="Time Period Start" 
+                type="date" 
+                value={this.state.timeStart} 
+                onChange={this.handleChange} 
+              />
+              <label htmlFor='timeEnd'>Time Period End</label>
+              <input 
+                name='timeEnd' 
+                placeholder="Time Period End" 
+                type="date" 
+                value={this.state.timeEnd} 
+                onChange={this.handleChange} 
+              />
+            </div>
+            <div className="section"><span>3</span>Latitude and Longitude</div>
+            <div className="inner-wrap">
+              <label htmlFor='latitude'> Latitude </label>
+              <input 
+                readOnly
+                name='latitude' 
+                placeholder="Latitude" 
+                type="text" 
+                value={this.state.latlng.lat} 
+              />
+              <label htmlFor='longitude'> Longitude </label>
+              <input 
+                readOnly 
+                name='longitude'
+                placeholder="Longitude" 
+                type="text" 
+                value={this.state.latlng.lng} 
+              />
+            </div>
+            <div className="section"><span>4</span>Location</div>
+            <div className="inner-wrap">
+              <label htmlFor='state'> State </label>
+              <input 
+                readOnly 
+                name='state'
+                placeholder="State" 
+                type="text" 
+                value={this.state.stateLong} 
+              />
+              <label htmlFor='postalCode'> Postal Code </label>
+              <input 
+                readOnly 
+                name='postalCode'
+                placeholder="Postal Code" 
+                type="text" 
+                value={this.state.postalCode} 
+              />
+              <label htmlFor='region'> Region </label>
+              <input 
+                readOnly
+                name='region' 
+                placeholder="Region" 
+                type="text" 
+                value={this.state.region} 
+              />
+            </div>
+            <div className="button-section">
+              <input type="submit" name="submit" />
+            </div>
           </form>
+        </div>
         </Map>
       </div>
     );
