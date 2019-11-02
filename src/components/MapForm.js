@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import { GoogleApiKey } from '../APIKeys';
-
+import "../styles/MapForm.css"
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
 
