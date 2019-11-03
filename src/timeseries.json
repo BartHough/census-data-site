@@ -1,0 +1,54 @@
+[
+  {
+    "0": {
+      "id": "resconst",
+      "label": "New Residential Construction",
+      "data_type_code": {
+        "TOTAL": "Total Units",
+        "SINGLE": "Single-Family Units",
+        "MULTI": "Units in Buildings with 5 Units or More"
+      },
+      "category_code": {
+        "COMPLETIONS": "Housing Units Completed",
+        "UNDERCONST": "Housing Units Under Construction",
+        "STARTS": "Housing Units Started"
+      },
+      "geographies": {
+        "0": "US",
+        "1": "NE",
+        "2": "MW",
+        "3": "SO",
+        "4": "WE"
+      },
+      "seasonally_adj": {
+        "0": "no",
+        "1": "yes"
+      }
+    },
+    "1": {
+      "id": "ressales",
+      "label": "New Home Sales",
+      "data_type_code": {
+        "TOTAL": "All Houses",
+        "COMPED": "Houses That Are Completed",
+        "UNDERC": "Houses That Are Under Construction",
+        "NOTSTD": "Houses That Are Not Started"
+      },
+      "category_code": {
+        "SOLD": "New Single-Family Houses Sold",
+        "FORSALE": "New Single-Family Houses For Sale"
+      },
+      "geographies": {
+        "0": "US",
+        "1": "NE",
+        "2": "MW",
+        "3": "SO",
+        "4": "WE"
+      },
+      "seasonally_adj": {
+        "0": "no",
+        "1": "yes"
+      }
+    }
+  }
+]
