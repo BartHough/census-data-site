@@ -305,6 +305,7 @@ export class MapForm extends Component {
                   type="date"
                   value={this.state.timeStart}
                   onChange={this.handleChange}
+                  required
                 />
                 <div className="button-section">
                   <input value="Submit" type="submit" />
