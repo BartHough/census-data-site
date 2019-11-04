@@ -12,7 +12,8 @@
 	-moz-border-radius: 10px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  float: right;
 }
 .mapForm .inner-wrap{
 	padding: 30px;
@@ -113,4 +114,18 @@
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
+}
+
+/* .Chart {
+
+} */
+
+.showChart {
+  opacity: 1;
+  position: absolute;
+  bottom: 0px;
+}
+
+.hideChart {
+  opacity: 0;
 }

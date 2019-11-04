@@ -3,7 +3,8 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import { GoogleApiKey } from '../APIKeys';
-import "../styles/MapForm.css"
+import "../styles/MapForm.css";
+import Chart from './Chart';
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
 
@@ -263,6 +264,7 @@ export class MapForm extends Component {
   };
 
   render() {
+    const visibleChart = true;
     return (
       <div>
         <Map
@@ -311,7 +313,11 @@ export class MapForm extends Component {
             </form>
           </div>
         </Map>
-      </div>
+        
+        <div className={`chart ${visibleChart ? 'showChart' : 'hideChart'}`} >
+          <Chart data={this.state.chartData} labels={this.state.labels} label={`Requested Data`}/>
+        </div>
+        </div>
     );
   }
 }
