@@ -1,0 +1,80 @@
+{
+    "reconst": [
+        {
+            "category_code": [
+                {
+                    "id": "APERMITS",
+                    "description": "Annual Rate for Housing Units Authorized in Permit-Issuing Places"
+                },
+                {
+                    "id": "PERMITS",
+                    "description": "Housing Units Authorized in Permit-Issuing Places"
+                },
+                {
+                    "id": "AUTHNOTSTD",
+                    "description": "Housing Units Authorized But Not Started"
+                },
+                {
+                    "id": "ASTARTS",
+                    "description": "Annual Rate for Housing Units Started"
+                },
+                {
+                    "id": "STARTS",
+                    "description": "Housing Units Started"
+                },
+                {
+                    "id": "UNDERCONST",
+                    "description": "Housing Units Under Construction"
+                },
+                {
+                    "id": "ACOMPLETIONS",
+                    "description": "Annual Rate for Housing Units Completed"
+                },
+                {
+                    "id": "COMPLETIONS",
+                    "description": "Housing Units Completed"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "TOTAL",
+                    "description": "Total Units"
+                },
+                {
+                    "id": "SINGLE",
+                    "description": "Single-family Units"
+                },
+                {
+                    "id": "MULTI",
+                    "description": "Units in Buildings with 5 Units or More"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "United States"
+                },
+                {
+                    "id": "NE",
+                    "description": "Northeast"
+                },
+                {
+                    "id": "MW",
+                    "description": "Midwest"
+                },
+                {
+                    "id": "SO",
+                    "description": "South"
+                },
+                {
+                    "id": "WE",
+                    "description": "West"
+                }
+            ]
+        }
+    ]
+}

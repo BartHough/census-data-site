@@ -1,0 +1,184 @@
+{
+    "vip": [
+        {
+            "category_code": [
+                {
+                    "id": "XXXX",
+                    "description": "Total Construction"
+                },
+                {
+                    "id": "00XX",
+                    "description": "Residential"
+                },
+                {
+                    "id": "NRXX",
+                    "description": "Nonresidential"
+                },
+                {
+                    "id": "01XX",
+                    "description": "Lodging"
+                },
+                {
+                    "id": "02XX",
+                    "description": "Office"
+                },
+                {
+                    "id": "03XX",
+                    "description": "Commercial"
+                },
+                {
+                    "id": "04XX",
+                    "description": "Health Care"
+                },
+                {
+                    "id": "05XX",
+                    "description": "Educational"
+                },
+                {
+                    "id": "06XX",
+                    "description": "Religious"
+                },
+                {
+                    "id": "07XX",
+                    "description": "Public Safety"
+                },
+                {
+                    "id": "08XX",
+                    "description": "Amusement and Recreation"
+                },
+                {
+                    "id": "09XX",
+                    "description": "Transportation"
+                },
+                {
+                    "id": "10XX",
+                    "description": "Communication"
+                },
+                {
+                    "id": "11XX",
+                    "description": "Power"
+                },
+                {
+                    "id": "12XX",
+                    "description": "Highway and Street"
+                },
+                {
+                    "id": "13XX",
+                    "description": "Sewage and Waste Disposal"
+                },
+                {
+                    "id": "14XX",
+                    "description": "Water Supply"
+                },
+                {
+                    "id": "15XX",
+                    "description": "Conservation and Development"
+                },
+                {
+                    "id": "20IX",
+                    "description": "Manufacturing"
+                },
+                {
+                    "id": "AXXXX",
+                    "description": "Annual Rate for Total Construction"
+                },
+                {
+                    "id": "A00XX",
+                    "description": "Annual Rate for Residential"
+                },
+                {
+                    "id": "ANRXX",
+                    "description": "Annual Rate for Nonresidential"
+                },
+                {
+                    "id": "A01XX",
+                    "description": "Annual Rate for Lodging"
+                },
+                {
+                    "id": "A02XX",
+                    "description": "Annual Rate for Office"
+                },
+                {
+                    "id": "A03XX",
+                    "description": "Annual Rate for Commercial"
+                },
+                {
+                    "id": "A04XX",
+                    "description": "Annual Rate for Health Care"
+                },
+                {
+                    "id": "A05XX",
+                    "description": "Annual Rate for Educational"
+                },
+                {
+                    "id": "A06XX",
+                    "description": "Annual Rate for Religious"
+                },
+                {
+                    "id": "A07XX",
+                    "description": "Annual Rate for Public Safety"
+                },
+                {
+                    "id": "A08XX",
+                    "description": "Annual Rate for Amusement and Recreation"
+                },
+                {
+                    "id": "A09XX",
+                    "description": "Annual Rate for Transportation"
+                },
+                {
+                    "id": "A10XX",
+                    "description": "Annual Rate for Communication"
+                },
+                {
+                    "id": "A11XX",
+                    "description": "Annual Rate for Power"
+                },
+                {
+                    "id": "A12XX",
+                    "description": "Annual Rate for Highway and Street"
+                },
+                {
+                    "id": "A13XX",
+                    "description": "Annual Rate for Sewage and Waste Disposal"
+                },
+                {
+                    "id": "A14XX",
+                    "description": "Annual Rate for Water Supply"
+                },
+                {
+                    "id": "A15XX",
+                    "description": "Annual Rate for Conservation and Development"
+                },
+                {
+                    "id": "A20IX",
+                    "description": "Annual Rate for Manufacturing"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "T",
+                    "description": "Total Construction"
+                },
+                {
+                    "id": "V",
+                    "description": "Total Private Construction"
+                },
+                {
+                    "id": "P",
+                    "description": "Total Public Construction"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

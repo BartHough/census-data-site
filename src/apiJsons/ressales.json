@@ -1,0 +1,64 @@
+{
+    "ressales": [
+        {
+            "category_code": [
+                {
+                    "id": "SOLD",
+                    "description": "New Single-family Houses Sold"
+                },
+                {
+                    "id": "ASOLD",
+                    "description": "Annual Rate for New Single-family Houses Sold"
+                },
+                {
+                    "id": "FORSALE",
+                    "description": "New Single-family Houses For Sale"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "TOTAL",
+                    "description": "All Houses"
+                },
+                {
+                    "id": "NOTSTD",
+                    "description": "Houses that are Not Started"
+                },
+                {
+                    "id": "UNDERC",
+                    "description": "Houses that are Under Construction"
+                },
+                {
+                    "id": "COMPED",
+                    "description": "Houses that are Completed"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "United States"
+                },
+                {
+                    "id": "NE",
+                    "description": "Northeast"
+                },
+                {
+                    "id": "MW",
+                    "description": "Midwest"
+                },
+                {
+                    "id": "SO",
+                    "description": "South"
+                },
+                {
+                    "id": "WE",
+                    "description": "West"
+                }
+            ]
+        }
+    ]
+}

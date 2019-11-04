@@ -1,0 +1,288 @@
+{
+    "mrts": [
+        {
+            "category_code": [
+                {
+                    "id": "44X72",
+                    "description": "44X72: Retail Trade and Food Services"
+                },
+                {
+                    "id": "44Y72",
+                    "description": "44Y72: Retail Trade and Food Services, ex Auto"
+                },
+                {
+                    "id": "44Z72",
+                    "description": "44Z72: Retail Trade and Food Services, ex Gas"
+                },
+                {
+                    "id": "44W72",
+                    "description": "44W72: Retail Trade and Food Services, ex Auto and Gas"
+                },
+                {
+                    "id": "44000",
+                    "description": "44000: Retail Trade"
+                },
+                {
+                    "id": "4400A",
+                    "description": "4400A: Retail Trade, ex Auto"
+                },
+                {
+                    "id": "4400C",
+                    "description": "4400C: GAFO"
+                },
+                {
+                    "id": "441",
+                    "description": "441: Motor Vehicle and Parts Dealers"
+                },
+                {
+                    "id": "441X",
+                    "description": "4411,4412: Auto and Other Motor Vehicles"
+                },
+                {
+                    "id": "4411",
+                    "description": "4411: Automobile Dealers"
+                },
+                {
+                    "id": "44111",
+                    "description": "44111: New Car Dealers"
+                },
+                {
+                    "id": "44112",
+                    "description": "44112: Used Car Dealers"
+                },
+                {
+                    "id": "4413",
+                    "description": "4413: Automotive Parts, Acc., and Tire Stores"
+                },
+                {
+                    "id": "4423X",
+                    "description": "4423X: Furniture, Home Furn, Electronics, and Appliance Stores"
+                },
+                {
+                    "id": "442",
+                    "description": "442: Furniture and Home Furnishings Stores"
+                },
+                {
+                    "id": "4421",
+                    "description": "4421: Furniture Stores"
+                },
+                {
+                    "id": "4422",
+                    "description": "4422: Home Furnishings Stores"
+                },
+                {
+                    "id": "44221",
+                    "description": "44221: Floor Covering Stores"
+                },
+                {
+                    "id": "442299",
+                    "description": "442299: All Other Home Furnishings Stores"
+                },
+                {
+                    "id": "443",
+                    "description": "443: Electronics and Appliance Stores"
+                },
+                {
+                    "id": "443141",
+                    "description": "443141: Household Appliance Stores"
+                },
+                {
+                    "id": "443142",
+                    "description": "443142: Electronics Stores"
+                },
+                {
+                    "id": "444",
+                    "description": "444: Building Mat. and Garden Equip. and Supplies Dealers"
+                },
+                {
+                    "id": "4441",
+                    "description": "4441: Building Mat. and Supplies Dealers"
+                },
+                {
+                    "id": "44412",
+                    "description": "44412: Paint and Wallpaper Stores"
+                },
+                {
+                    "id": "44413",
+                    "description": "44413: Hardware Stores"
+                },
+                {
+                    "id": "445",
+                    "description": "445: Food and Beverage Stores"
+                },
+                {
+                    "id": "4451",
+                    "description": "4451: Grocery Stores"
+                },
+                {
+                    "id": "44511",
+                    "description": "44511: Supermarkets and Other Grocery (Except Convenience) Stores"
+                },
+                {
+                    "id": "4453",
+                    "description": "4453: Beer, Wine, and Liquor Stores"
+                },
+                {
+                    "id": "446",
+                    "description": "446: Health and Personal Care Stores"
+                },
+                {
+                    "id": "44611",
+                    "description": "44611: Pharmacies and Drug Stores"
+                },
+                {
+                    "id": "447",
+                    "description": "447: Gasoline Stations"
+                },
+                {
+                    "id": "448",
+                    "description": "448: Clothing and Clothing Access. Stores"
+                },
+                {
+                    "id": "4481",
+                    "description": "4481: Clothing Stores"
+                },
+                {
+                    "id": "44811",
+                    "description": "44811: Men's Clothing Stores"
+                },
+                {
+                    "id": "44812",
+                    "description": "44812: Women's Clothing Stores"
+                },
+                {
+                    "id": "44814",
+                    "description": "44814: Family Clothing Stores"
+                },
+                {
+                    "id": "44819",
+                    "description": "44819: Other Clothing Stores"
+                },
+                {
+                    "id": "4482",
+                    "description": "4482: Shoe Stores"
+                },
+                {
+                    "id": "44831",
+                    "description": "44831: Jewelry Stores"
+                },
+                {
+                    "id": "451",
+                    "description": "451: Sporting Goods, Hobby, Musical Instrument, and Book Stores"
+                },
+                {
+                    "id": "45111",
+                    "description": "45111: Sporting Goods Stores"
+                },
+                {
+                    "id": "45112",
+                    "description": "45112: Hobby, Toy, and Game Stores"
+                },
+                {
+                    "id": "451211",
+                    "description": "451211: Book Stores"
+                },
+                {
+                    "id": "452",
+                    "description": "452: General Merchandise Stores"
+                },
+                {
+                    "id": "4521E",
+                    "description": "4521: Department Stores"
+                },
+                {
+                    "id": "452112E",
+                    "description": "452112: Discount Dept. Stores"
+                },
+                {
+                    "id": "452111E",
+                    "description": "452111: Department Stores (Excl. Discount Department Stores)"
+                },
+                {
+                    "id": "4529",
+                    "description": "4529: Other General Merchandise Stores"
+                },
+                {
+                    "id": "45291",
+                    "description": "45291: Warehouse Clubs and Superstores"
+                },
+                {
+                    "id": "45299",
+                    "description": "45299: All Other Gen. Merchandise Stores"
+                },
+                {
+                    "id": "453",
+                    "description": "453: Miscellaneous Store Retailers"
+                },
+                {
+                    "id": "4532",
+                    "description": "4532: Office Supplies, Stationery, and Gift Stores"
+                },
+                {
+                    "id": "45321",
+                    "description": "45321: Office Supplies and Stationery Stores"
+                },
+                {
+                    "id": "45322",
+                    "description": "45322: Gift, Novelty, and Souvenir Stores"
+                },
+                {
+                    "id": "45330",
+                    "description": "4533: Used Merchandise Stores"
+                },
+                {
+                    "id": "454",
+                    "description": "454: Nonstore Retailers"
+                },
+                {
+                    "id": "4541",
+                    "description": "4541: Electronic Shopping and Mail-order Houses"
+                },
+                {
+                    "id": "45431",
+                    "description": "45431: Fuel Dealers"
+                },
+                {
+                    "id": "722",
+                    "description": "722: Food Services and Drinking Places"
+                },
+                {
+                    "id": "7224",
+                    "description": "7224: Drinking Places"
+                },
+                {
+                    "id": "7225",
+                    "description": "7225: Restaurants and Other Eating Places"
+                },
+                {
+                    "id": "722511",
+                    "description": "722511: Full Service Restaurants"
+                },
+                {
+                    "id": "72251X",
+                    "description": "72251X: Limited Service Eating Places"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "SM",
+                    "description": "Sales - Monthly"
+                },
+                {
+                    "id": "MPCSM",
+                    "description": "Sales - Monthly Percent Change"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

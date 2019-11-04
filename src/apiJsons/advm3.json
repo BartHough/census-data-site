@@ -1,0 +1,132 @@
+{
+    "advm3": [
+        {
+            "category_code": [
+                {
+                    "id": "MDM",
+                    "description": "Durable Goods"
+                },
+                {
+                    "id": "DXT",
+                    "description": "Durable goods excluding transportation"
+                },
+                {
+                    "id": "DXD",
+                    "description": "Durable goods excluding defense"
+                },
+                {
+                    "id": "MTU",
+                    "description": "Manufacturing with unfilled orders"
+                },
+                {
+                    "id": "31S",
+                    "description": "Primary Metals"
+                },
+                {
+                    "id": "32S",
+                    "description": "Fabricated Metal Products"
+                },
+                {
+                    "id": "33S",
+                    "description": "Machinery"
+                },
+                {
+                    "id": "34S",
+                    "description": "Computers and Electronic Products"
+                },
+                {
+                    "id": "CRP",
+                    "description": "Computers and Related products"
+                },
+                {
+                    "id": "34X",
+                    "description": "Communications Equipment"
+                },
+                {
+                    "id": "35S",
+                    "description": "Electrical Equipment, Appliances and Components"
+                },
+                {
+                    "id": "36S",
+                    "description": "Transportation Equipment"
+                },
+                {
+                    "id": "MVP",
+                    "description": "Motor Vehicles and Parts"
+                },
+                {
+                    "id": "NAP",
+                    "description": "Nondefense Aircraft and Parts"
+                },
+                {
+                    "id": "DAP",
+                    "description": "Defense Aircraft and Parts"
+                },
+                {
+                    "id": "ODG",
+                    "description": "All Other Durable goods"
+                },
+                {
+                    "id": "TCG",
+                    "description": "Capital Goods"
+                },
+                {
+                    "id": "NDE",
+                    "description": "Nondefense Capital Goods"
+                },
+                {
+                    "id": "NXA",
+                    "description": "Nondefense Capital Goods Excluding Aircraft"
+                },
+                {
+                    "id": "DEF",
+                    "description": "Defense Capital Goods"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "VS",
+                    "description": "Value of Shipments"
+                },
+                {
+                    "id": "NO",
+                    "description": "New Orders"
+                },
+                {
+                    "id": "UO",
+                    "description": "Unfilled Orders"
+                },
+                {
+                    "id": "TI",
+                    "description": "Total Inventories"
+                },
+                {
+                    "id": "MPCVS",
+                    "description": "Value of Shipments Percent Change Monthly"
+                },
+                {
+                    "id": "MPCNO",
+                    "description": "New Orders Percent Change Monthly"
+                },
+                {
+                    "id": "MPCUO",
+                    "description": "Unfilled Orders Percent Change Monthly"
+                },
+                {
+                    "id": "MPCTI",
+                    "description": "Total Inventories Percent Change Monthly"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

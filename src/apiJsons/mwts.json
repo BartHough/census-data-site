@@ -1,0 +1,128 @@
+{
+    "mwts": [
+        {
+            "category_code": [
+                {
+                    "id": "42",
+                    "description": "42: Total Merchant Wholesalers, Except Manufacturers' Sales Branches and Offices"
+                },
+                {
+                    "id": "423",
+                    "description": "423: Durable Goods"
+                },
+                {
+                    "id": "4231",
+                    "description": "4231: Motor Vehicle and Motor Vehicle Parts and Supplies"
+                },
+                {
+                    "id": "4232",
+                    "description": "4232: Furniture and Home Furnishings"
+                },
+                {
+                    "id": "4233",
+                    "description": "4233: Lumber and Other Construction Materials"
+                },
+                {
+                    "id": "4234",
+                    "description": "4234: Professional and Commercial Equipment and Supplies"
+                },
+                {
+                    "id": "42343",
+                    "description": "42343: Computer and Computer Peripheral Equipment and Software"
+                },
+                {
+                    "id": "4235",
+                    "description": "4235: Metals and Minerals, Except Petroleum"
+                },
+                {
+                    "id": "4236",
+                    "description": "4236: Household Appliances and Electrical and Electronic Goods"
+                },
+                {
+                    "id": "4237",
+                    "description": "4237: Hardware, and Plumbing and Heating Equipment and Supplies"
+                },
+                {
+                    "id": "4238",
+                    "description": "4238: Machinery, Equipment, and Supplies"
+                },
+                {
+                    "id": "4239",
+                    "description": "4239: Miscellaneous Durable Goods"
+                },
+                {
+                    "id": "424",
+                    "description": "424: Nondurable Goods"
+                },
+                {
+                    "id": "4241",
+                    "description": "4241: Paper and Paper Products"
+                },
+                {
+                    "id": "4242",
+                    "description": "4242: Drugs and Druggists' Sundries"
+                },
+                {
+                    "id": "4243",
+                    "description": "4243: Apparel, Piece Goods, and Notions"
+                },
+                {
+                    "id": "4244",
+                    "description": "4244: Grocery and Related Products"
+                },
+                {
+                    "id": "4245",
+                    "description": "4245: Farm Product Raw Materials"
+                },
+                {
+                    "id": "4246",
+                    "description": "4246: Chemicals and Allied Products"
+                },
+                {
+                    "id": "4247",
+                    "description": "4247: Petroleum and Petroleum Products"
+                },
+                {
+                    "id": "4248",
+                    "description": "4248: Beer, Wine, and Distilled Alcoholic Beverages"
+                },
+                {
+                    "id": "4249",
+                    "description": "4249: Miscellaneous Nondurable Goods"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "SM",
+                    "description": "Sales - Monthly"
+                },
+                {
+                    "id": "IM",
+                    "description": "Inventories - Monthly"
+                },
+                {
+                    "id": "IR",
+                    "description": "Inventories/Sales Ratio"
+                },
+                {
+                    "id": "MPCSM",
+                    "description": "Sales - Monthly Percent Change"
+                },
+                {
+                    "id": "MPCIM",
+                    "description": "Inventories - Monthly Percent Change"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

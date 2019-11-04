@@ -1,0 +1,412 @@
+{
+    "qfr": [
+        {
+            "category_code": [
+                {
+                    "id": "MFG",
+                    "description": "All Manufacturing"
+                },
+                {
+                    "id": "NDU",
+                    "description": "All Nondurable Manufacturing"
+                },
+                {
+                    "id": "311",
+                    "description": "Food"
+                },
+                {
+                    "id": "312",
+                    "description": "Beverage and Tobacco Products"
+                },
+                {
+                    "id": "313",
+                    "description": "Textile Mills and Textile Product Mills"
+                },
+                {
+                    "id": "ANL",
+                    "description": "Apparel and Leather Products"
+                },
+                {
+                    "id": "322",
+                    "description": "Paper"
+                },
+                {
+                    "id": "323",
+                    "description": "Printing and Related Support Activities"
+                },
+                {
+                    "id": "324",
+                    "description": "Petroleum and Coal Products"
+                },
+                {
+                    "id": "CHE",
+                    "description": "Chemicals"
+                },
+                {
+                    "id": "375",
+                    "description": "Basic Chemicals, Resins, and Synthetics"
+                },
+                {
+                    "id": "385",
+                    "description": "Pharmaceuticals and Medicines"
+                },
+                {
+                    "id": "325",
+                    "description": "All Other Chemicals"
+                },
+                {
+                    "id": "326",
+                    "description": "Plastics and Rubber Products"
+                },
+                {
+                    "id": "DUR",
+                    "description": "All Durable Manufacturing"
+                },
+                {
+                    "id": "321",
+                    "description": "Wood Products"
+                },
+                {
+                    "id": "327",
+                    "description": "Nonmetallic Mineral Products"
+                },
+                {
+                    "id": "PRI",
+                    "description": "Primary Metals"
+                },
+                {
+                    "id": "371",
+                    "description": "Iron, Steel, and Ferroalloys"
+                },
+                {
+                    "id": "381",
+                    "description": "Nonferrous Metals"
+                },
+                {
+                    "id": "331",
+                    "description": "Foundries"
+                },
+                {
+                    "id": "332",
+                    "description": "Fabricated Metal Products"
+                },
+                {
+                    "id": "333",
+                    "description": "Machinery"
+                },
+                {
+                    "id": "COM",
+                    "description": "Computer and Electronic Products"
+                },
+                {
+                    "id": "374",
+                    "description": "Computer and Peripheral Equipment"
+                },
+                {
+                    "id": "384",
+                    "description": "Communications Equipment"
+                },
+                {
+                    "id": "334",
+                    "description": "All Other Electronic Products"
+                },
+                {
+                    "id": "335",
+                    "description": "Electrical Equipment, Appliances, and Components"
+                },
+                {
+                    "id": "TRA",
+                    "description": "Transportation Equipment"
+                },
+                {
+                    "id": "376",
+                    "description": "Motor Vehicles and Parts"
+                },
+                {
+                    "id": "386",
+                    "description": "Aerospace Products and Parts"
+                },
+                {
+                    "id": "337",
+                    "description": "Furniture and Related Products"
+                },
+                {
+                    "id": "339",
+                    "description": "Miscellaneous Manufacturing"
+                },
+                {
+                    "id": "MIN",
+                    "description": "All Mining"
+                },
+                {
+                    "id": "WHS",
+                    "description": "All Wholesale Trade"
+                },
+                {
+                    "id": "421",
+                    "description": "Wholesale Trade, Durable Goods"
+                },
+                {
+                    "id": "422",
+                    "description": "Wholesale Trade, Nondurable Goods"
+                },
+                {
+                    "id": "RET",
+                    "description": "All Retail Trade"
+                },
+                {
+                    "id": "445",
+                    "description": "Food and Beverage Stores"
+                },
+                {
+                    "id": "448",
+                    "description": "Clothing and General Merchandise Stores"
+                },
+                {
+                    "id": "OTR",
+                    "description": "All Other Retail Trade"
+                },
+                {
+                    "id": "INF",
+                    "description": "All Information"
+                },
+                {
+                    "id": "511",
+                    "description": "Publishing Industries, Except Internet"
+                },
+                {
+                    "id": "512",
+                    "description": "Motion Picture and Sound Recording Industries"
+                },
+                {
+                    "id": "515",
+                    "description": "Broadcasting, Except Internet"
+                },
+                {
+                    "id": "517",
+                    "description": "Telecommunications"
+                },
+                {
+                    "id": "519",
+                    "description": "All Other Information"
+                },
+                {
+                    "id": "PTS",
+                    "description": "All Professional and Technical Services, Except Legal Services"
+                },
+                {
+                    "id": "545",
+                    "description": "Computer Systems Design and Related Services"
+                },
+                {
+                    "id": "546",
+                    "description": "Management and Technical Consulting Services"
+                },
+                {
+                    "id": "547",
+                    "description": "Scientific Research and Development Services"
+                },
+                {
+                    "id": "549",
+                    "description": "All Other Professional and Technical Services, Except Legal Services"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "101",
+                    "description": "Net Sales, Receipts, and Operating Revenues"
+                },
+                {
+                    "id": "102",
+                    "description": "Depreciation, Depletion, and Amortization of Property, Plant, and Equipment"
+                },
+                {
+                    "id": "103",
+                    "description": "All Other Operating Costs and Expenses"
+                },
+                {
+                    "id": "104",
+                    "description": "Income (Loss) from Operations"
+                },
+                {
+                    "id": "105",
+                    "description": "Interest Expense"
+                },
+                {
+                    "id": "D110",
+                    "description": "All Other Nonoperating Income (Expense)"
+                },
+                {
+                    "id": "111",
+                    "description": "Income (Loss) Before Income Taxes"
+                },
+                {
+                    "id": "D114",
+                    "description": "Provision for Current and Deferred Domestic Income Taxes"
+                },
+                {
+                    "id": "115",
+                    "description": "Income (Loss) After Income Taxes"
+                },
+                {
+                    "id": "120",
+                    "description": "Cash Dividends Charged to Retained Earnings This Quarter"
+                },
+                {
+                    "id": "NIRB",
+                    "description": "Net Income Retained in Business"
+                },
+                {
+                    "id": "D119",
+                    "description": "Retained Earnings at Beginning of Quarter"
+                },
+                {
+                    "id": "D122",
+                    "description": "Other Direct Credits (Charges) to Retained Earnings (Net)"
+                },
+                {
+                    "id": "D123",
+                    "description": "Retained Earnings at End of Quarter"
+                },
+                {
+                    "id": "201",
+                    "description": "Cash and Demand Deposits in the U.S."
+                },
+                {
+                    "id": "202",
+                    "description": "Time Deposits in the U.S., Including Negotiable Certificates of Deposit"
+                },
+                {
+                    "id": "TCASH",
+                    "description": "Total Cash on Hand and in U.S. Banks"
+                },
+                {
+                    "id": "D210",
+                    "description": "Other Short-term Financial Investments"
+                },
+                {
+                    "id": "TCASH2",
+                    "description": "Total Cash, U.S. Government and Other Securities"
+                },
+                {
+                    "id": "D213",
+                    "description": "Trade Accounts and Trade Notes Receivable (Less Allowance for Doubtful Accounts)"
+                },
+                {
+                    "id": "214",
+                    "description": "Inventories"
+                },
+                {
+                    "id": "215",
+                    "description": "All Other Current Assets"
+                },
+                {
+                    "id": "TCA",
+                    "description": "Total Current Assets"
+                },
+                {
+                    "id": "216",
+                    "description": "Property, Plant, and Equipment"
+                },
+                {
+                    "id": "217",
+                    "description": "Land and Mineral Rights"
+                },
+                {
+                    "id": "218",
+                    "description": "Accumulated Depreciation, Depletion, and Amortization"
+                },
+                {
+                    "id": "219",
+                    "description": "Net Property, Plant, and Equipment"
+                },
+                {
+                    "id": "D222",
+                    "description": "All Other Noncurrent Assets"
+                },
+                {
+                    "id": "223",
+                    "description": "Total Assets"
+                },
+                {
+                    "id": "301",
+                    "description": "Short-term Debt, Original Maturity of 1 Year or Less: Loans from Banks"
+                },
+                {
+                    "id": "D304",
+                    "description": "Short-term Debt, Original Maturity of 1 Year or Less: Other Short-term Loans, Including Commercial Paper"
+                },
+                {
+                    "id": "306",
+                    "description": "Trade Accounts and Trade Notes Payable"
+                },
+                {
+                    "id": "D309",
+                    "description": "Income Taxes Accrued, Prior and Current Years, Net of Payments"
+                },
+                {
+                    "id": "310",
+                    "description": "Current Portion of Long-term Debt, Due in 1 Year or Less: Loans from Banks"
+                },
+                {
+                    "id": "D313",
+                    "description": "Current Portion of Long-term Debt, Due in 1 Year or Less: Other Long-term Loans"
+                },
+                {
+                    "id": "D315",
+                    "description": "All Other Current Liabilities"
+                },
+                {
+                    "id": "TCL",
+                    "description": "Total Current Liabilities"
+                },
+                {
+                    "id": "316",
+                    "description": "Long-term Debt, Due in More than 1 Year: Loans from Banks"
+                },
+                {
+                    "id": "D319",
+                    "description": "Long-term Debt, Due in More than 1 Year: Other Long-term Loans"
+                },
+                {
+                    "id": "320",
+                    "description": "All Other Noncurrent Liabilities"
+                },
+                {
+                    "id": "TL",
+                    "description": "Total Liabilities"
+                },
+                {
+                    "id": "D326",
+                    "description": "Capital Stock and Other Capital (Less Treasury Stock)"
+                },
+                {
+                    "id": "322",
+                    "description": "Retained Earnings"
+                },
+                {
+                    "id": "327",
+                    "description": "Stockholders' Equity"
+                },
+                {
+                    "id": "328",
+                    "description": "Total Liabilities and Stockholders' Equity"
+                },
+                {
+                    "id": "NWC",
+                    "description": "Net Working Capital"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 APIKeys.js
+web_scraper/geckodriver.log
+web_scraper/ghostdriver.log

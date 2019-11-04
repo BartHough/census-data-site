@@ -1,0 +1,56 @@
+{
+    "mtis": [
+        {
+            "category_code": [
+                {
+                    "id": "TOTBUS",
+                    "description": "Total Business"
+                },
+                {
+                    "id": "MNFCTR",
+                    "description": "Manufacturers"
+                },
+                {
+                    "id": "RETAIL",
+                    "description": "Retailers"
+                },
+                {
+                    "id": "WHLSLR",
+                    "description": "Merchant Wholesalers"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "SM",
+                    "description": "Sales - Monthly"
+                },
+                {
+                    "id": "IM",
+                    "description": "Inventories - Monthly"
+                },
+                {
+                    "id": "IR",
+                    "description": "Inventories/Sales Ratio"
+                },
+                {
+                    "id": "MPCIM",
+                    "description": "Inventories - Monthly Percent Change"
+                },
+                {
+                    "id": "MPCSM",
+                    "description": "Sales - Monthly Percent Change"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}

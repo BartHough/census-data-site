@@ -1,0 +1,108 @@
+{
+    "qpr": [
+        {
+            "category_code": [
+                {
+                    "id": "AMTHOLDINGS",
+                    "description": "Cash and Security Holdings"
+                },
+                {
+                    "id": "AMTREVENUES",
+                    "description": "Revenues"
+                },
+                {
+                    "id": "PCTHOLDINGS",
+                    "description": "Percent Distribution of Holdings"
+                },
+                {
+                    "id": "TOTHOLDINGS",
+                    "description": "Total Cash and Security Holdings"
+                },
+                {
+                    "id": "CSHHOLDINGS",
+                    "description": "Total Cash and Short-term Investments"
+                },
+                {
+                    "id": "FEDHOLDINGS",
+                    "description": "Total Federal Government Securities"
+                },
+                {
+                    "id": "BNDHOLDINGS",
+                    "description": "Total Corporate Bonds"
+                },
+                {
+                    "id": "CEQHOLDINGS",
+                    "description": "Total Corporate Equity"
+                },
+                {
+                    "id": "PEQHOLDINGS",
+                    "description": "Total Private Equity"
+                },
+                {
+                    "id": "INDHOLDINGS",
+                    "description": "Total Other Indirectly Held Assets"
+                },
+                {
+                    "id": "MIVHOLDINGS",
+                    "description": "Total Other Investments"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "HLDTOT",
+                    "description": "Total Cash and Security Holdings"
+                },
+                {
+                    "id": "HLDSTK",
+                    "description": "Corporate Stocks"
+                },
+                {
+                    "id": "HLDBND",
+                    "description": "Corporate Bonds"
+                },
+                {
+                    "id": "HLDFGS",
+                    "description": "Federal Government Securities"
+                },
+                {
+                    "id": "HLDINT",
+                    "description": "International Securities"
+                },
+                {
+                    "id": "HLDMTG",
+                    "description": "Mortgages"
+                },
+                {
+                    "id": "HLDSLS",
+                    "description": "State and Local Government Securities"
+                },
+                {
+                    "id": "HLDCSH",
+                    "description": "Cash and Short-Term Investments"
+                },
+                {
+                    "id": "HLDOTH",
+                    "description": "Other Securities"
+                },
+                {
+                    "id": "HLDUST",
+                    "description": "United States Treasuries"
+                },
+                {
+                    "id": "HLDFAS",
+                    "description": "Federal Agency Securities"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "U.S. Total"
+                }
+            ]
+        }
+    ]
+}
