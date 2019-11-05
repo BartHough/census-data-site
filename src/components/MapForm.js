@@ -320,7 +320,7 @@ export class MapForm extends Component {
   render() {
     return (
       <div>
-        {/* <Map
+        <Map
           google={this.props.google}
           style={style.map}
           initialCenter={this.state.latlng}
@@ -328,9 +328,9 @@ export class MapForm extends Component {
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
-          <Marker position={this.state.latlng} /> */}
+          <Marker position={this.state.latlng} />
           <div className="mapForm">
-            {/* <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1> */}
+            <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1>
             <form onSubmit={this.getAPIGraphData} style={style.form}>
               <Select
                 placeholder='Select Table'
@@ -365,7 +365,7 @@ export class MapForm extends Component {
               </div>
             </form>
           </div>
-        {/* </Map> */}
+        </Map>
       </div>
     );
   }
