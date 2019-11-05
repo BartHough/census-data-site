@@ -3,6 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
 import Select from 'react-select';
 import { GoogleApiKey } from '../APIKeys';
+import ChartWrapper from './ChartWrapper'
 import "../styles/MapForm.css"
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
@@ -108,6 +109,7 @@ export class MapForm extends Component {
   handleTableName(selectedOption) {
     const tableId = selectedOption.value
     const tableName = selectedOption.label
+    console.log(tableName)
     let dataTypes
     let categories
     if (tableId === "resconst") {
@@ -119,8 +121,8 @@ export class MapForm extends Component {
       categories = ccRessales;
     }
     this.setState({
-      tableName,
       ...this.state,
+      tableName,
       dataTypes,
       categories,
       tableId
@@ -303,6 +305,7 @@ export class MapForm extends Component {
                   type="date"
                   value={this.state.timeStart}
                   onChange={this.handleChange}
+                  required
                 />
                 <div className="button-section">
                   <input value="Submit" type="submit" />
@@ -310,6 +313,7 @@ export class MapForm extends Component {
               </div>
             </form>
           </div>
+          <ChartWrapper data={this.state.chartData} labels={this.state.labels} title={this.state.tableName} />
         </Map>
       </div>
     );
