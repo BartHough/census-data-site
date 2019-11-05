@@ -7,6 +7,10 @@ import "../styles/MapForm.css"
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
 
+const CATEGORY_CODE = 0;
+const DATA_TYPE_CODE = 1;
+const GEO_LEVEL_CODE = 2;
+
 const dtcResconst = [
   { value: "TOTAL", label: "Total Units" },
   { value: "SINGLE", label: "Single-Family Units" },
@@ -104,19 +108,15 @@ export class MapForm extends Component {
   async handleTableName(selectedOption) {
     const tableId = selectedOption.value
     const tableName = selectedOption.label
-    let dataTypes
-    let categories
-
+    
     const data = await import(`../apiJsons/${tableId}.json`)
-    console.log(data)
-    if (tableId === "resconst") {
-      dataTypes = dtcResconst;
-      categories = ccResconst;
-    }
-    else {
-      dataTypes = dtcRessales;
-      categories = ccRessales;
-    }
+
+    let dataTypes = this.extractCategoryDataDropdownOptions(data.default[tableId][DATA_TYPE_CODE].data_type_code);
+    let categories = this.extractCategoryDataDropdownOptions(data.default[tableId][CATEGORY_CODE].category_code);
+
+    console.log(dataTypes);
+    console.log(categories);
+
     this.setState({
       tableName,
       ...this.state,
@@ -238,7 +238,7 @@ export class MapForm extends Component {
       }
       tableObjects.push(newObj);
     });
-    let titles = this.extractDropdownOptions(tableObjects);
+    let titles = this.extractTableDropdownOptions(tableObjects);
     console.log('titles', titles)
     this.setState({
       ...this.state,
@@ -248,11 +248,21 @@ export class MapForm extends Component {
     console.log('state table objects', this.state.tableData)
   }
 
-  extractDropdownOptions(tableObjects) {
+  extractTableDropdownOptions(tableObjects) {
     let selectOptions = []
     tableObjects.forEach(table => {
       selectOptions.push(
         { value: table.id, label: table.title }
+      )
+    })
+    return selectOptions
+  }
+
+  extractCategoryDataDropdownOptions(objects) {
+    let selectOptions = []
+    objects.forEach(obj => {
+      selectOptions.push(
+        { value: obj.id, label: obj.description }
       )
     })
     return selectOptions
@@ -310,7 +320,7 @@ export class MapForm extends Component {
   render() {
     return (
       <div>
-        <Map
+        {/* <Map
           google={this.props.google}
           style={style.map}
           initialCenter={this.state.latlng}
@@ -318,9 +328,9 @@ export class MapForm extends Component {
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}
         >
-          <Marker position={this.state.latlng} />
+          <Marker position={this.state.latlng} /> */}
           <div className="mapForm">
-            <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1>
+            {/* <h1>Please Select a Report<span>Make sure to fill out the time period you would like to see.</span></h1> */}
             <form onSubmit={this.getAPIGraphData} style={style.form}>
               <Select
                 placeholder='Select Table'
@@ -355,7 +365,7 @@ export class MapForm extends Component {
               </div>
             </form>
           </div>
-        </Map>
+        {/* </Map> */}
       </div>
     );
   }
