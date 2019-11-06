@@ -8,10 +8,10 @@ import "../styles/MapForm.css"
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
 
-const tables = [
-  { value: "resconst", label: "New Residential Construction" },
-  { value: "ressales", label: "New Home Sales" }
-]
+const CATEGORY_CODE = 0;
+const DATA_TYPE_CODE = 1;
+const GEO_LEVEL_CODE = 2;
+
 const dtcResconst = [
   { value: "TOTAL", label: "Total Units" },
   { value: "SINGLE", label: "Single-Family Units" },
@@ -80,7 +80,7 @@ export class MapForm extends Component {
       labels: [],
       chartData: [],
       tableData: [],
-      dropDown: tables,
+      dropDown: [],
       dataTypes: [],
       categories: [],
       tableId: ""
@@ -106,20 +106,18 @@ export class MapForm extends Component {
     })
   }
 
-  handleTableName(selectedOption) {
+  async handleTableName(selectedOption) {
     const tableId = selectedOption.value
     const tableName = selectedOption.label
-    console.log(tableName)
-    let dataTypes
-    let categories
-    if (tableId === "resconst") {
-      dataTypes = dtcResconst;
-      categories = ccResconst;
-    }
-    else {
-      dataTypes = dtcRessales;
-      categories = ccRessales;
-    }
+    
+    const data = await import(`../apiJsons/${tableId}.json`)
+
+    let dataTypes = this.extractCategoryDataDropdownOptions(data.default[tableId][DATA_TYPE_CODE].data_type_code);
+    let categories = this.extractCategoryDataDropdownOptions(data.default[tableId][CATEGORY_CODE].category_code);
+
+    console.log(dataTypes);
+    console.log(categories);
+
     this.setState({
       ...this.state,
       tableName,
@@ -200,6 +198,7 @@ export class MapForm extends Component {
 
   async componentDidMount() {
     const { lat, lng } = await this.getcurrentLocation();
+    await this.getAPIData();
     this.setState(prev => ({
       ...prev,
       latlng: {
@@ -211,7 +210,7 @@ export class MapForm extends Component {
         lng
       }
     }));
-    this.updateFields(lat, lng)
+    this.updateFields(lat, lng);
   }
 
   getAPIGraphData = (event) => {
@@ -219,7 +218,57 @@ export class MapForm extends Component {
     fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.state.fromYear}`)
       .then(res => res.json())
       .then(data => {
-        this.parseApiResponse(data)
+        this.parseApiResponse(data);
+      })
+      .catch(console.log)
+  }
+
+  getTables(apiData) {
+    let tableObjects = []
+    apiData.dataset.forEach(table => {
+      const newObj = {
+        "id": table.c_dataset[2], // id needed for graph data API call URL
+        "title": table.title.split(': ')[1], // takes table title description after ': '
+        "varLink": table.c_variablesLink,
+        "fromYear": table.temporal.match(/[1|2]\d+/g).map(Number)[0] // parses 1000/2000 years from string ex. 1968, 2005
+      }
+      tableObjects.push(newObj);
+    });
+    let titles = this.extractTableDropdownOptions(tableObjects);
+    console.log('titles', titles)
+    this.setState({
+      ...this.state,
+      tableData: tableObjects,
+      dropDown: titles
+    });
+    console.log('state table objects', this.state.tableData)
+  }
+
+  extractTableDropdownOptions(tableObjects) {
+    let selectOptions = []
+    tableObjects.forEach(table => {
+      selectOptions.push(
+        { value: table.id, label: table.title }
+      )
+    })
+    return selectOptions
+  }
+
+  extractCategoryDataDropdownOptions(objects) {
+    let selectOptions = []
+    objects.forEach(obj => {
+      selectOptions.push(
+        { value: obj.id, label: obj.description }
+      )
+    })
+    return selectOptions
+  }
+
+  async getAPIData() {
+    fetch('https://api.census.gov/data/timeseries/eits')
+      .then(res => res.json())
+      .then(data => {
+        this.getTables(data)
       })
       .catch(console.log)
   }

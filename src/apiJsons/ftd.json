@@ -1,1 +1,40 @@
-{"ftd": [{"category_code": [{"id": "BOPGS", "description": "Balance of Payment Goods and Services"}, {"id": "BOPG", "description": "Balance of Payment Goods"}]}, {"data_type_code": [{"id": "BAL", "description": "Balance"}, {"id": "EXP", "description": "Exports"}, {"id": "IMP", "description": "Imports"}]}, {"geo_level_code": [{"id": "US", "description": "United States"}]}]}
+{
+    "ftd": [
+        {
+            "category_code": [
+                {
+                    "id": "BOPGS",
+                    "description": "Balance of Payment Goods and Services"
+                },
+                {
+                    "id": "BOPG",
+                    "description": "Balance of Payment Goods"
+                }
+            ]
+        },
+        {
+            "data_type_code": [
+                {
+                    "id": "BAL",
+                    "description": "Balance"
+                },
+                {
+                    "id": "EXP",
+                    "description": "Exports"
+                },
+                {
+                    "id": "IMP",
+                    "description": "Imports"
+                }
+            ]
+        },
+        {
+            "geo_level_code": [
+                {
+                    "id": "US",
+                    "description": "United States"
+                }
+            ]
+        }
+    ]
+}
