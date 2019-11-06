@@ -215,7 +215,7 @@ export class MapForm extends Component {
 
   getAPIGraphData = (event) => {
     event.preventDefault()
-    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj&time=from+${this.state.fromYear}`)
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.state.fromYear}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
