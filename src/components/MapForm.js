@@ -218,14 +218,25 @@ export class MapForm extends Component {
     fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.state.fromYear}`)
       .then(res => res.json())
       .then(data => {
-        this.setState({
-          ...this.state,
-          graphData: data
-        });
-        console.log(this.state.graphData)
-        console.log(`fromYear: ${this.state.fromYear}`)
+        this.parseApiResponse(data);
       })
       .catch(console.log)
+  }
+
+  parseApiResponse(data) {
+    let labels = []
+    let chartData = []
+    data.forEach(row => {
+      if (row[1] === this.state.dataType && row[4] === this.state.category && row[5] === "no" && row[6] === this.state.region) {
+        chartData.push(row[0]);
+        labels.push(row[7])
+      }
+    })
+    this.setState({
+      ...this.state,
+      labels,
+      chartData
+    })
   }
 
   getTables(apiData) {
