@@ -223,22 +223,6 @@ export class MapForm extends Component {
       .catch(console.log)
   }
 
-  parseApiResponse(data) {
-    let labels = []
-    let chartData = []
-    data.forEach(row => {
-      if (row[1] === this.state.dataType && row[4] === this.state.category && row[5] === "no" && row[6] === this.state.region) {
-        chartData.push(row[0]);
-        labels.push(row[7])
-      }
-    })
-    this.setState({
-      ...this.state,
-      labels,
-      chartData
-    })
-  }
-
   getTables(apiData) {
     let tableObjects = []
     apiData.dataset.forEach(table => {
