@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GMap from './GMap';
+import DataForm from './DataForm';
 
 export class StateContainer extends Component {
 
@@ -18,7 +19,6 @@ export class StateContainer extends Component {
       tableName: "",
       fromYear: "",
       graphData: "",
-      variable: "",
       timeStart: "",
       timeEnd: "",
       dataType: "",
@@ -52,6 +52,60 @@ export class StateContainer extends Component {
       })
   }
 
+  updateDataTypeState(dataType) {
+    this.setState({
+      ...this.state,
+      dataType
+    })
+  }
+
+  updateCategoryState(category) {
+    this.setState({
+      ...this.state,
+      category
+    })
+  }
+
+  updateFormState = (
+    tableName,
+    fromYear,
+    graphData,
+    timeStart,
+    timeEnd,
+    category,
+    labels,
+    chartData,
+    tableData,
+    dropDown,
+    dataTypes,
+    categories,
+    tableId
+  ) => {
+    this.setState({
+      ...this.state,
+      tableName,
+      fromYear,
+      graphData,
+      timeStart,
+      timeEnd,
+      dataType,
+      category,
+      labels,
+      chartData,
+      tableData,
+      dropDown,
+      dataTypes,
+      categories,
+      tableId
+    })
+  }
+
+  updateGraphDataState(
+
+  ) {
+
+  }
+
   render() {
     return (
       <div>
@@ -63,7 +117,22 @@ export class StateContainer extends Component {
             postalCode={this.state.postalCode}
             region={this.state.region}
             updateMapState={this.updateMapState} />
-          <p>form</p>
+          <DataForm
+            tableName={this.state.tableName}
+            fromYear={this.state.fromYear}
+            graphData={this.state.graphData}
+            timeStart={this.state.timeStart}
+            timeEnd={this.state.timeEnd}
+            dataType={this.state.dataType}
+            category={this.state.category}
+            labels={this.state.labels}
+            chartData={this.state.chartData}
+            tableData={this.state.tableData}
+            dropDown={this.state.dropDown}
+            dataTypes={this.state.dataTypes}
+            categories={this.state.categories}
+            tableId={this.state.tableId}
+            updateFormState={this.updateFormState} />
       </div>
     );
   }
