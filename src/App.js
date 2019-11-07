@@ -1,11 +1,11 @@
 import React from 'react';
-import MapForm from './components/MapForm'
+import StateContainer from './components/StateContainer'
 import './App.css';
 function App() {
   return (
     <div className="App">
       <div>
-        <MapForm />
+        <StateContainer />
       </div>
     </div>
   );

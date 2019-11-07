@@ -8,33 +8,6 @@ import "../styles/MapForm.css"
 const apiKey = GoogleApiKey;
 Geocode.setApiKey(apiKey)
 
-const CATEGORY_CODE = 0;
-const DATA_TYPE_CODE = 1;
-const GEO_LEVEL_CODE = 2;
-
-const dtcResconst = [
-  { value: "TOTAL", label: "Total Units" },
-  { value: "SINGLE", label: "Single-Family Units" },
-  { value: "MULTI", label: "Units in Buildings with 5 Units or More" }
-]
-const dtcRessales = [
-  { value: "TOTAL", label: "All Houses" },
-  { value: "COMPED", label: "Houses That Are Completed" },
-  { value: "UNDERC", label: "Houses That Are Under Construction" },
-  { value: "NOTSTD", label: "Houses That Are Not Started" }
-]
-
-const ccResconst = [
-  { value: "COMPLETIONS", label: "Housing Units Completed" },
-  { value: "UNDERCONST", label: "Housing Units Under Construction" },
-  { value: "STARTS", label: "Housing Units Started" }
-]
-const ccRessales = [
-  { value: "SOLD", label: "New Single-Family Houses Sold" },
-  { value: "FORSALE", label: "New Single-Family Houses For Sale" }
-]
-
-
 const style = {
   map: {
     width: '100%',
@@ -53,7 +26,6 @@ const style = {
     })
   }
 }
-
 
 export class MapForm extends Component {
 
@@ -89,6 +61,25 @@ export class MapForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleDataType = this.handleDataType.bind(this)
     this.handleCategory = this.handleCategory.bind(this)
+  }
+
+  updateMapState = (
+    latlng,
+    address,
+    stateLong,
+    stateShort,
+    postalCode,
+    region
+  ) => {
+      this.setState({
+        ...this.state,
+        latlng,
+        address,
+        stateLong,
+        stateShort,
+        postalCode,
+        region
+      })
   }
   handleDataType(selectedOption) {
     const dataType = selectedOption.value;
@@ -371,4 +362,4 @@ export class MapForm extends Component {
 
 export default GoogleApiWrapper({
   apiKey: apiKey
-})(MapForm)
+})(GMap)
