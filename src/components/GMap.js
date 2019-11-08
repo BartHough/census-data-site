@@ -124,7 +124,6 @@ class GMap extends Component {
           zoom={4}
           onClick={(t, map, c) => this.addMarker(c.latLng, map)}>
           <Marker position={this.props.latlng} />
-          
         </Map>
       </div>
     );

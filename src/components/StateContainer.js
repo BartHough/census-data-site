@@ -33,14 +33,7 @@ export class StateContainer extends Component {
     }
   }
 
-  updateMapState = (
-    latlng,
-    address,
-    stateLong,
-    stateShort,
-    postalCode,
-    region
-  ) => {
+  updateMapState = (latlng, address, stateLong, stateShort, postalCode, region) => {
       this.setState({
         ...this.state,
         latlng,
@@ -52,63 +45,54 @@ export class StateContainer extends Component {
       })
   }
 
-  updateDataTypeState(dataType) {
+  updateDataTypeState = (dataType) => {
     this.setState({
       ...this.state,
       dataType
     })
   }
 
-  updateCategoryState(category) {
+  updateCategoryState = (category) => {
     this.setState({
       ...this.state,
       category
     })
   }
 
-  updateFormState = (
-    tableName,
-    fromYear,
-    graphData,
-    timeStart,
-    timeEnd,
-    category,
-    labels,
-    chartData,
-    tableData,
-    dropDown,
-    dataTypes,
-    categories,
-    tableId
-  ) => {
+  updateTableState = (tableName, dataTypes, categories, tableId, tableData, dropDown) => {
     this.setState({
       ...this.state,
       tableName,
-      fromYear,
-      graphData,
-      timeStart,
-      timeEnd,
-      dataType,
-      category,
-      labels,
-      chartData,
-      tableData,
-      dropDown,
       dataTypes,
       categories,
-      tableId
+      tableId,
+      tableData,
+      dropDown
     })
   }
 
-  updateGraphDataState(
+  updateTimeState = (timeStart, timeEnd, fromYear) => {
+    this.setState({
+      ...this.state,
+      timeStart,
+      timeEnd,
+      fromYear
+    })
+  }
 
-  ) {
-
+  updateGraphState = (graphData, labels, chartData) => {
+    this.setState({
+      ...this.state,
+      graphData,
+      labels,
+      chartData
+    })
   }
 
   render() {
     return (
       <div>
+        <div>
           <GMap 
             latlng={this.state.latlng}
             address={this.state.address}
@@ -117,6 +101,8 @@ export class StateContainer extends Component {
             postalCode={this.state.postalCode}
             region={this.state.region}
             updateMapState={this.updateMapState} />
+        </div>
+        <div>
           <DataForm
             tableName={this.state.tableName}
             fromYear={this.state.fromYear}
@@ -132,7 +118,13 @@ export class StateContainer extends Component {
             dataTypes={this.state.dataTypes}
             categories={this.state.categories}
             tableId={this.state.tableId}
-            updateFormState={this.updateFormState} />
+            updateFormState={this.updateFormState}
+            updateCategoryState={this.updateCategoryState}
+            updateDataTypeState={this.updateDataTypeState}
+            updateGraphState={this.updateGraphState}
+            updateTableState={this.updateTableState}
+            updateTimeState={this.updateTimeState} />
+        </div>  
       </div>
     );
   }

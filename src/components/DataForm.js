@@ -19,20 +19,23 @@ const style = {
 
 class DataForm extends Component {
 
-  handleDataType(selectedOption) {
-    const dataType = selectedOption.value;
-    this.setState({
-      ...this.state,
-      dataType
-
-    })
+  constructor(props) {
+    super(props);
+    this.handleTableName = this.handleTableName.bind(this);
   }
-  handleCategory(selectedOption) {
+
+  async componentDidMount() {
+    await this.getAPIData();
+  }
+
+  handleDataType = (selectedOption) => {
+    const dataType = selectedOption.value;
+    this.props.updateDataTypeState(dataType);
+  }
+
+  handleCategory = (selectedOption) => {
     const category = selectedOption.value;
-    this.setState({
-      ...this.state,
-      category
-    })
+    this.props.updateCategoryState(category);
   }
 
   async handleTableName(selectedOption) {
@@ -44,31 +47,18 @@ class DataForm extends Component {
     let dataTypes = this.extractCategoryDataDropdownOptions(data.default[tableId][DATA_TYPE_CODE].data_type_code);
     let categories = this.extractCategoryDataDropdownOptions(data.default[tableId][CATEGORY_CODE].category_code);
 
-    console.log(dataTypes);
-    console.log(categories);
-
-    this.setState({
-      ...this.state,
-      tableName,
-      dataTypes,
-      categories,
-      tableId
-    })
+    this.props.updateTableState(tableName, dataTypes, categories, tableId, this.props.tableData, this.props.dropDown);
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     const timeStart = event.target.value
     const fromYear = timeStart.split('-')[0]
-    this.setState({
-      ...this.state,
-      timeStart,
-      fromYear
-    })
+    this.props.updateTimeState(timeStart, this.props.timeEnd, fromYear)
   }
 
   getAPIGraphData = (event) => {
     event.preventDefault()
-    fetch(`https://api.census.gov/data/timeseries/eits/${this.state.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.state.fromYear}`)
+    fetch(`https://api.census.gov/data/timeseries/eits/${this.props.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.props.fromYear}`)
       .then(res => res.json())
       .then(data => {
         this.parseApiResponse(data);
@@ -76,8 +66,9 @@ class DataForm extends Component {
       .catch(console.log)
   }
 
-  getTables(apiData) {
-    let tableObjects = []
+  getTables = (apiData) => {
+    let tableData = []
+    
     apiData.dataset.forEach(table => {
       const newObj = {
         "id": table.c_dataset[2], // id needed for graph data API call URL
@@ -85,19 +76,22 @@ class DataForm extends Component {
         "varLink": table.c_variablesLink,
         "fromYear": table.temporal.match(/[1|2]\d+/g).map(Number)[0] // parses 1000/2000 years from string ex. 1968, 2005
       }
-      tableObjects.push(newObj);
+      tableData.push(newObj);
     });
-    let titles = this.extractTableDropdownOptions(tableObjects);
-    console.log('titles', titles)
-    this.setState({
-      ...this.state,
-      tableData: tableObjects,
-      dropDown: titles
-    });
-    console.log('state table objects', this.state.tableData)
+    
+    let dropDown = this.extractTableDropdownOptions(tableData);
+
+    this.props.updateTableState(
+        this.props.tableName,
+        this.props.dataTypes,
+        this.props.categories,
+        this.props.tableId,
+        tableData,
+        dropDown
+    )
   }
 
-  extractTableDropdownOptions(tableObjects) {
+  extractTableDropdownOptions = (tableObjects) => {
     let selectOptions = []
     tableObjects.forEach(table => {
       selectOptions.push(
@@ -107,7 +101,7 @@ class DataForm extends Component {
     return selectOptions
   }
 
-  extractCategoryDataDropdownOptions(objects) {
+  extractCategoryDataDropdownOptions = (objects) => {
     let selectOptions = []
     objects.forEach(obj => {
       selectOptions.push(
@@ -126,20 +120,16 @@ class DataForm extends Component {
       .catch(console.log)
   }
 
-  parseApiResponse(data) {
+  parseApiResponse = (data) => {
     let labels = []
     let chartData = []
     data.forEach(row => {
-      if (row[1] === this.state.dataType && row[4] === this.state.category && row[5] === "no" && row[6] === this.state.region) {
+      if (row[1] === this.props.dataType && row[4] === this.props.category && row[5] === "no" && row[6] === this.props.region) {
         chartData.push(row[0]);
         labels.push(row[7])
       }
     })
-    this.setState({
-      ...this.state,
-      labels,
-      chartData
-    })
+    this.props.updateGraphState(this.props.graphData, labels, chartData);
   }
 
   render() {
@@ -152,19 +142,19 @@ class DataForm extends Component {
             placeholder='Select Table'
             style={style.select}
             onChange={this.handleTableName}
-            options={this.state.dropDown}
+            options={this.props.dropDown}
             />
             <Select
             placeholder='Select Data Type'
             style={style.select}
             onChange={this.handleDataType}
-            options={this.state.dataTypes}
+            options={this.props.dataTypes}
             />
             <Select
             placeholder='Select Category'
             style={style.select}
             onChange={this.handleCategory}
-            options={this.state.categories}
+            options={this.props.categories}
             />
             <div className="inner-wrap">
             <label htmlFor='timeStart'>Time Period Start</label>
@@ -172,7 +162,7 @@ class DataForm extends Component {
                 name='timeStart'
                 placeholder="Time Period Start"
                 type="date"
-                value={this.state.timeStart}
+                value={this.props.timeStart}
                 onChange={this.handleChange}
                 required
             />
