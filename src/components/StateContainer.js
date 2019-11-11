@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GMap from './GMap';
 import DataForm from './DataForm';
+import Chart from './Chart';
 
 export class StateContainer extends Component {
 
@@ -29,20 +30,21 @@ export class StateContainer extends Component {
       dropDown: [],
       dataTypes: [],
       categories: [],
-      tableId: ""
+      tableId: "",
+      renderChart: false
     }
   }
 
   updateMapState = (latlng, address, stateLong, stateShort, postalCode, region) => {
-      this.setState({
-        ...this.state,
-        latlng,
-        address,
-        stateLong,
-        stateShort,
-        postalCode,
-        region
-      })
+    this.setState({
+      ...this.state,
+      latlng,
+      address,
+      stateLong,
+      stateShort,
+      postalCode,
+      region
+    })
   }
 
   updateDataTypeState = (dataType) => {
@@ -80,51 +82,50 @@ export class StateContainer extends Component {
     })
   }
 
-  updateGraphState = (graphData, labels, chartData) => {
+  updateGraphState = (graphData, labels, chartData, renderChart) => {
     this.setState({
       ...this.state,
       graphData,
       labels,
-      chartData
+      chartData,
+      renderChart
     })
   }
 
   render() {
     return (
       <div>
-        <div>
-          <GMap 
-            latlng={this.state.latlng}
-            address={this.state.address}
-            stateLong={this.state.stateLong}
-            stateShort={this.state.stateShort}
-            postalCode={this.state.postalCode}
-            region={this.state.region}
-            updateMapState={this.updateMapState} />
-        </div>
-        <div>
-          <DataForm
-            tableName={this.state.tableName}
-            fromYear={this.state.fromYear}
-            graphData={this.state.graphData}
-            timeStart={this.state.timeStart}
-            timeEnd={this.state.timeEnd}
-            dataType={this.state.dataType}
-            category={this.state.category}
-            labels={this.state.labels}
-            chartData={this.state.chartData}
-            tableData={this.state.tableData}
-            dropDown={this.state.dropDown}
-            dataTypes={this.state.dataTypes}
-            categories={this.state.categories}
-            tableId={this.state.tableId}
-            updateFormState={this.updateFormState}
-            updateCategoryState={this.updateCategoryState}
-            updateDataTypeState={this.updateDataTypeState}
-            updateGraphState={this.updateGraphState}
-            updateTableState={this.updateTableState}
-            updateTimeState={this.updateTimeState} />
-        </div>  
+        <GMap
+          latlng={this.state.latlng}
+          address={this.state.address}
+          stateLong={this.state.stateLong}
+          stateShort={this.state.stateShort}
+          postalCode={this.state.postalCode}
+          region={this.state.region}
+          updateMapState={this.updateMapState} />
+        <DataForm
+          tableName={this.state.tableName}
+          fromYear={this.state.fromYear}
+          graphData={this.state.graphData}
+          timeStart={this.state.timeStart}
+          timeEnd={this.state.timeEnd}
+          dataType={this.state.dataType}
+          category={this.state.category}
+          labels={this.state.labels}
+          chartData={this.state.chartData}
+          tableData={this.state.tableData}
+          dropDown={this.state.dropDown}
+          dataTypes={this.state.dataTypes}
+          categories={this.state.categories}
+          tableId={this.state.tableId}
+          updateFormState={this.updateFormState}
+          updateCategoryState={this.updateCategoryState}
+          updateDataTypeState={this.updateDataTypeState}
+          updateGraphState={this.updateGraphState}
+          updateTableState={this.updateTableState}
+          updateTimeState={this.updateTimeState} />
+
+        {this.state.renderChart && <Chart labels={this.state.labels} data={this.state.chartData} title={this.state.tableName} />}
       </div>
     );
   }

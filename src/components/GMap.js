@@ -9,11 +9,7 @@ Geocode.setApiKey(apiKey)
 const style = {
   map: {
     width: '100%',
-    height: '50%',
-    display: 'inline-block',
-    position: 'relative',
-    top: '10px',
-    margin: '0 0 10px 0'
+    height: '100%'
   }
 }
 
@@ -21,7 +17,7 @@ class GMap extends Component {
 
   async componentDidMount() {
     const { lat, lng } = await this.getcurrentLocation();
-    const latlng = {lat, lng}
+    const latlng = { lat, lng }
     this.props.updateMapState(
       latlng,
       this.props.address,
@@ -32,7 +28,7 @@ class GMap extends Component {
     );
     this.updateFields(lat, lng);
   }
-  
+
   findRegion(state) {
     const west = ['WA', 'OR', 'CA', 'ID', 'NV', 'MT', 'WY', 'UT', 'CO', 'AZ', 'NM']
     const midwest = ['ND', 'SD', 'NE', 'KS', 'MN', 'IA', 'MO', 'WI', 'IL', 'IN', 'MI', 'OH']
@@ -76,7 +72,7 @@ class GMap extends Component {
             }
           });
           const region = this.findRegion(stateShort)
-          const latlng = {lat, lng}
+          const latlng = { lat, lng }
           this.props.updateMapState(
             latlng,
             address,
@@ -115,7 +111,7 @@ class GMap extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ position: 'relative', width: '100vw', height: '50vh' }}>
         <Map
           google={this.props.google}
           style={style.map}

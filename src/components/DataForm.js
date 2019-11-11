@@ -129,7 +129,7 @@ class DataForm extends Component {
         labels.push(row[7])
       }
     })
-    this.props.updateGraphState(this.props.graphData, labels, chartData);
+    this.props.updateGraphState(this.props.graphData, labels, chartData, true);
   }
 
   render() {
