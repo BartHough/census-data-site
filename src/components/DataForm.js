@@ -63,6 +63,7 @@ class DataForm extends Component {
   }
 
   getAPIGraphData = (event) => {
+    this.props.updateLoading(true);
     event.preventDefault()
     fetch(`https://api.census.gov/data/timeseries/eits/${this.props.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.props.fromYear}`)
       .then(res => res.json())
@@ -137,6 +138,7 @@ class DataForm extends Component {
       }
     })
     this.props.updateGraphState(this.props.graphData, labels, chartData, true);
+    this.props.updateLoading(false);
   }
 
   render() {

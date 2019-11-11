@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GMap from './GMap';
 import DataForm from './DataForm';
 import Chart from './Chart';
+import Spinner from './Spinner'
 
 export class StateContainer extends Component {
 
@@ -32,6 +33,7 @@ export class StateContainer extends Component {
       categories: [],
       tableId: "",
       renderChart: false,
+      loading: false,
       location: ""
     }
   }
@@ -94,6 +96,13 @@ export class StateContainer extends Component {
     })
   }
 
+  updateLoading = (loading) => {
+    this.setState({
+      ...this.state,
+      loading
+    })
+  }
+
   render() {
     return (
       <div>
@@ -104,7 +113,8 @@ export class StateContainer extends Component {
           stateShort={this.state.stateShort}
           postalCode={this.state.postalCode}
           region={this.state.region}
-          updateMapState={this.updateMapState} />
+          updateMapState={this.updateMapState}
+        />
         <DataForm
           tableName={this.state.tableName}
           fromYear={this.state.fromYear}
@@ -128,9 +138,24 @@ export class StateContainer extends Component {
           updateDataTypeState={this.updateDataTypeState}
           updateGraphState={this.updateGraphState}
           updateTableState={this.updateTableState}
-          updateTimeState={this.updateTimeState} />
-
-        {this.state.renderChart && <Chart labels={this.state.labels} data={this.state.chartData} title={this.state.tableName} />}
+          updateTimeState={this.updateTimeState}
+          updateLoading={this.updateLoading}
+        />
+        <div>
+          {
+            this.state.loading &&
+            !this.state.renderChart &&
+            <Spinner />
+          }
+        </div>
+        {
+          this.state.renderChart &&
+          <Chart
+            labels={this.state.labels}
+            data={this.state.chartData}
+            title={this.state.tableName}
+          />
+        }
       </div>
     );
   }
