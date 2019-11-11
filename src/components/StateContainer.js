@@ -31,7 +31,8 @@ export class StateContainer extends Component {
       dataTypes: [],
       categories: [],
       tableId: "",
-      renderChart: false
+      renderChart: false,
+      location: ""
     }
   }
 
@@ -61,7 +62,7 @@ export class StateContainer extends Component {
     })
   }
 
-  updateTableState = (tableName, dataTypes, categories, tableId, tableData, dropDown) => {
+  updateTableState = (tableName, dataTypes, categories, tableId, tableData, dropDown, location) => {
     this.setState({
       ...this.state,
       tableName,
@@ -69,7 +70,8 @@ export class StateContainer extends Component {
       categories,
       tableId,
       tableData,
-      dropDown
+      dropDown,
+      location
     })
   }
 
@@ -118,6 +120,9 @@ export class StateContainer extends Component {
           dataTypes={this.state.dataTypes}
           categories={this.state.categories}
           tableId={this.state.tableId}
+          region={this.state.region}
+          stateShort={this.state.stateShort}
+          location={this.state.location}
           updateFormState={this.updateFormState}
           updateCategoryState={this.updateCategoryState}
           updateDataTypeState={this.updateDataTypeState}
