@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
-import { GoogleApiKey } from '../APIKeys';
 import "../styles/MapForm.css"
-const apiKey = GoogleApiKey;
+const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 Geocode.setApiKey(apiKey)
 
 const style = {
