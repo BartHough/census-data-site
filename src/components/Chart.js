@@ -6,6 +6,17 @@ class Chart extends Component {
     super(props);
     this.getData = this.getData.bind(this);
   }
+  messagesEndRef = React.createRef()
+
+  componentDidMount () {
+    this.scrollToBottom()
+  }
+  componentDidUpdate () {
+    this.scrollToBottom()
+  }
+  scrollToBottom = () => {
+    this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
 
   getData() {
     return {
@@ -44,6 +55,7 @@ class Chart extends Component {
               height={300}
               options={{maintainAspectRatio: false}}
         />
+        <div ref={this.messagesEndRef} />
       </div>
     )
   }
