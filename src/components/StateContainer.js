@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GMap from './GMap';
 import DataForm from './DataForm';
 import Chart from './Chart';
+import uuid from "uuid/v4"
 import Spinner from './Spinner'
 import '../styles/Accordion.css'
  
@@ -115,8 +116,8 @@ export class StateContainer extends Component {
   render() {
     return (
       <div>
-        <Accordion>
-          <AccordionItem>
+        <Accordion allowMultipleExpanded='true' allowZeroExpanded='true'>
+          <AccordionItem uuid={uuid()}>
             <AccordionItemHeading>
                 <AccordionItemButton>
                     Map
@@ -135,7 +136,7 @@ export class StateContainer extends Component {
             </AccordionItemPanel>
           </AccordionItem>
 
-          <AccordionItem>
+          <AccordionItem uuid={uuid()}>
             <AccordionItemHeading>
                 <AccordionItemButton>
                     Form
@@ -170,31 +171,23 @@ export class StateContainer extends Component {
               />
             </AccordionItemPanel>
           </AccordionItem>
-          <AccordionItem>
-            <AccordionItemHeading>
-                <AccordionItemButton>
-                    Chart
-                </AccordionItemButton>
-            </AccordionItemHeading>
-            <AccordionItemPanel>
-              <div>
-              {
-                this.state.loading &&
-                !this.state.renderChart &&
-                <Spinner />
-              }
-              </div>
-              { 
-                this.state.renderChart &&
-                <Chart
-                  labels={this.state.labels}
-                  data={this.state.chartData}
-                  title={this.state.tableName}
-                />
-              }
-            </AccordionItemPanel>
-          </AccordionItem>
         </Accordion>
+          
+        <div>
+        {
+          this.state.loading &&
+          !this.state.renderChart &&
+          <Spinner />
+        }
+        </div>
+        { 
+          this.state.renderChart &&
+          <Chart
+            labels={this.state.labels}
+            data={this.state.chartData}
+            title={this.state.tableName}
+          />
+        }
       </div>
     );
   }
