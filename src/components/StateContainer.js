@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import GMap from './GMap';
 import DataForm from './DataForm';
 import Chart from './Chart';
-import uuid from "uuid/v4"
 import Spinner from './Spinner'
 import '../styles/Accordion.css'
  
@@ -11,7 +10,8 @@ import {
     AccordionItem,
     AccordionItemHeading,
     AccordionItemPanel,
-    AccordionItemButton
+    AccordionItemButton,
+    AccordionItemState
 } from 'react-accessible-accordion';
 
 
@@ -117,8 +117,8 @@ export class StateContainer extends Component {
   render() {
     return (
       <div>
-        <Accordion allowMultipleExpanded='true' allowZeroExpanded='true'>
-          <AccordionItem uuid={uuid()}>
+        <Accordion allowMultipleExpanded='true' allowZeroExpanded='true' preExpanded={['accordionMap', 'accordionForm']}>
+          <AccordionItem uuid='accordionMap'>
             <AccordionItemHeading>
                 <AccordionItemButton>
                     Map
@@ -137,7 +137,7 @@ export class StateContainer extends Component {
             </AccordionItemPanel>
           </AccordionItem>
 
-          <AccordionItem uuid={uuid()}>
+          <AccordionItem uuid='accordionForm'>
             <AccordionItemHeading>
                 <AccordionItemButton>
                     Form
