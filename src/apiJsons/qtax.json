@@ -1,112 +1,108 @@
 {
-    "qtax": [
+  "qtax": [
+    {
+      "category_code": [
         {
-            "category_code": [
-                {
-                    "id": "QTAXCAT1",
-                    "description": "Table 1 - Latest National Totals of State and Local Tax Revenue"
-                },
-                {
-                    "id": "QTAXCAT2",
-                    "description": "Table 2 - Latest National Totals of State Tax Revenue"
-                },
-                {
-                    "id": "QTAXCAT3",
-                    "description": "Table 3 - Latest State Tax Collections by State and Type of Tax"
-                }
-            ]
+          "id": "QTAXCAT1",
+          "description": "Table 1 - Latest National Totals of State and Local Tax Revenue"
         },
         {
-            "data_type_code": [
-                {
-                    "id": "T01",
-                    "description": "T01 Property Taxes"
-                },
-                {
-                    "id": "T014QE",
-                    "description": "T01 Property Taxes, 4 Quarters Ending"
-                },
-                {
-                    "id": "T09",
-                    "description": "T09 General Sales and Gross Receipts Taxes"
-                },
-                {
-                    "id": "T094QE",
-                    "description": "T09 General Sales and Gross Receipts Taxes, 4 Quarters Ending"
-                },
-                {
-                    "id": "T10",
-                    "description": "T10 Alcoholic Beverages Sales Tax"
-                },
-                {
-                    "id": "T104QE",
-                    "description": "T10 Alcoholic Beverages Sales Tax, 4 Quarters Ending"
-                },
-                {
-                    "id": "T13",
-                    "description": "T13 Motor Fuels Sales Tax"
-                },
-                {
-                    "id": "T134QE",
-                    "description": "T13 Motor Fuels Sales Tax, 4 Quarters Ending"
-                },
-                {
-                    "id": "T16",
-                    "description": "T16 Tobacco Products Sales Tax"
-                },
-                {
-                    "id": "T164QE",
-                    "description": "T16 Tobacco Products Sales Tax, 4 Quarters Ending"
-                },
-                {
-                    "id": "T24T25",
-                    "description": "T24T25 Motor Vehicles License and Motor Vehicle Operators License"
-                },
-                {
-                    "id": "T24254",
-                    "description": "T24T25 Motor Vehicles License and Motor Vehicle Operators License, 4 Quarters Ending"
-                },
-                {
-                    "id": "T40",
-                    "description": "T40 Individual Income Taxes"
-                },
-                {
-                    "id": "T404QE",
-                    "description": "T40 Individual Income Taxes, 4 Quarters Ending"
-                },
-                {
-                    "id": "T41",
-                    "description": "T41 Corporation Net Income Taxes"
-                },
-                {
-                    "id": "T414QE",
-                    "description": "T41 Corporation Net Income Taxes, 4 Quarters Ending"
-                },
-                {
-                    "id": "ALLOTH",
-                    "description": "All Other Taxes"
-                },
-                {
-                    "id": "AO4QE",
-                    "description": "All Other Taxes, 4 Quarters Ending"
-                },
-                {
-                    "id": "TOTAL",
-                    "description": "Total Taxes"
-                },
-                {
-                    "id": "TOT4QE",
-                    "description": "Total Taxes, 4 Quarters Ending"
-                }
-            ]
-        },
-        {
-            "geo_level_code": [
-                {
-                    "id": "US",
-                    "description": "U.S. Total"
-                }
-            ]
+          "id": "QTAXCAT2",
+          "description": "Table 2 - Latest National Totals of State Tax Revenue"
         }
-    ]
+      ]
+    },
+    {
+      "data_type_code": [
+        {
+          "id": "T01",
+          "description": "T01 Property Taxes"
+        },
+        {
+          "id": "T014QE",
+          "description": "T01 Property Taxes, 4 Quarters Ending"
+        },
+        {
+          "id": "T09",
+          "description": "T09 General Sales and Gross Receipts Taxes"
+        },
+        {
+          "id": "T094QE",
+          "description": "T09 General Sales and Gross Receipts Taxes, 4 Quarters Ending"
+        },
+        {
+          "id": "T10",
+          "description": "T10 Alcoholic Beverages Sales Tax"
+        },
+        {
+          "id": "T104QE",
+          "description": "T10 Alcoholic Beverages Sales Tax, 4 Quarters Ending"
+        },
+        {
+          "id": "T13",
+          "description": "T13 Motor Fuels Sales Tax"
+        },
+        {
+          "id": "T134QE",
+          "description": "T13 Motor Fuels Sales Tax, 4 Quarters Ending"
+        },
+        {
+          "id": "T16",
+          "description": "T16 Tobacco Products Sales Tax"
+        },
+        {
+          "id": "T164QE",
+          "description": "T16 Tobacco Products Sales Tax, 4 Quarters Ending"
+        },
+        {
+          "id": "T24T25",
+          "description": "T24T25 Motor Vehicles License and Motor Vehicle Operators License"
+        },
+        {
+          "id": "T24254",
+          "description": "T24T25 Motor Vehicles License and Motor Vehicle Operators License, 4 Quarters Ending"
+        },
+        {
+          "id": "T40",
+          "description": "T40 Individual Income Taxes"
+        },
+        {
+          "id": "T404QE",
+          "description": "T40 Individual Income Taxes, 4 Quarters Ending"
+        },
+        {
+          "id": "T41",
+          "description": "T41 Corporation Net Income Taxes"
+        },
+        {
+          "id": "T414QE",
+          "description": "T41 Corporation Net Income Taxes, 4 Quarters Ending"
+        },
+        {
+          "id": "ALLOTH",
+          "description": "All Other Taxes"
+        },
+        {
+          "id": "AO4QE",
+          "description": "All Other Taxes, 4 Quarters Ending"
+        },
+        {
+          "id": "TOTAL",
+          "description": "Total Taxes"
+        },
+        {
+          "id": "TOT4QE",
+          "description": "Total Taxes, 4 Quarters Ending"
+        }
+      ]
+    },
+    {
+      "geo_level_code": [
+        {
+          "id": "US",
+          "description": "U.S. Total"
+        }
+      ]
+    }
+  ]
 }
