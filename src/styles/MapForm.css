@@ -4,7 +4,8 @@
 
 .mapForm{
 	width:92%;
-	padding:30px;
+  padding: 0px 30px 30px 30px;
+  /* padding-top: 5px; */
 	margin:40px auto;
 	background: #FFF;
 	border-radius: 10px;
