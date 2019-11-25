@@ -139,6 +139,7 @@ class DataForm extends Component {
     })
     this.props.updateGraphState(this.props.graphData, labels, chartData, true);
     this.props.updateLoading(false);
+    this.props.updateAccordionToggle(true);
   }
 
   render() {

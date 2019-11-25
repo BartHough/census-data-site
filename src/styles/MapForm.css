@@ -95,7 +95,8 @@
 .mapForm input[type="button"], 
 .mapForm input[type="submit"]{
 	background: #2A88AD;
-	padding: 8px 20px 8px 20px;
+  padding: 8px 20px 8px 20px;
+  margin-top: 30px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;

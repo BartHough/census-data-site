@@ -45,8 +45,17 @@ export class StateContainer extends Component {
       tableId: "",
       renderChart: false,
       loading: false,
-      location: ""
+      location: "",
+      hiddenAccordion: false
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      ...this.state,
+      hiddenAccordion: !prevState.hiddenAccordion
+    })); 
   }
 
   updateMapState = (latlng, address, stateLong, stateShort, postalCode, region) => {
@@ -114,10 +123,17 @@ export class StateContainer extends Component {
     })
   }
 
+  updateAccordionToggle = (hiddenAccordion) => {
+    this.setState({
+      ...this.state,
+      hiddenAccordion
+    })
+  }
+
   render() {
     return (
       <div>
-        <Accordion allowMultipleExpanded='true' allowZeroExpanded='true' preExpanded={['accordionMap', 'accordionForm']}>
+        <Accordion allowMultipleExpanded='true' allowZeroExpanded='true' preExpanded={['accordionMap', 'accordionForm']} className={this.state.hiddenAccordion ? 'hidden' : 'shown'}>
           <AccordionItem uuid='accordionMap'>
             <AccordionItemHeading>
                 <AccordionItemButton>
@@ -143,7 +159,7 @@ export class StateContainer extends Component {
                     Form
                 </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel>
+            <AccordionItemPanel> 
               <DataForm
                 tableName={this.state.tableName}
                 fromYear={this.state.fromYear}
@@ -169,8 +185,9 @@ export class StateContainer extends Component {
                 updateTableState={this.updateTableState}
                 updateTimeState={this.updateTimeState}
                 updateLoading={this.updateLoading}
+                updateAccordionToggle={this.updateAccordionToggle}
               />
-            </AccordionItemPanel>
+            </AccordionItemPanel >
           </AccordionItem>
         </Accordion>
           
@@ -189,6 +206,7 @@ export class StateContainer extends Component {
             title={this.state.tableName}
           />
         }
+        {this.state.hiddenAccordion && <button onClick={this.handleClick}>Run a new report</button>}
       </div>
     );
   }
