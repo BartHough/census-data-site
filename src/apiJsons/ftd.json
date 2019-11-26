@@ -3,10 +3,6 @@
         {
             "category_code": [
                 {
-                    "id": "BOPGS",
-                    "description": "Balance of Payment Goods and Services"
-                },
-                {
                     "id": "BOPG",
                     "description": "Balance of Payment Goods"
                 }

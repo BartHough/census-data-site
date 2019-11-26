@@ -3,10 +3,6 @@
         {
             "category_code": [
                 {
-                    "id": "D",
-                    "description": "Doubles"
-                },
-                {
                     "id": "M",
                     "description": "Multi-Section"
                 },
