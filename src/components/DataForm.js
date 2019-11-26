@@ -53,7 +53,7 @@ class DataForm extends Component {
     // else if (geoLevelCodes.length > 5) {
     //   location = this.props.stateShort;
     // }
-    this.props.updateTableState(tableName, dataTypes, categories, tableId, this.props.tableData, this.props.dropDown, location);
+    this.props.updateTableState(tableName, dataTypes, categories, tableId, this.props.tableData, this.props.dropDown, location, false, false);
   }
 
   handleChange = (event) => {
@@ -68,7 +68,7 @@ class DataForm extends Component {
     fetch(`https://api.census.gov/data/timeseries/eits/${this.props.tableId}?get=cell_value,data_type_code,time_slot_id,error_data,category_code,seasonally_adj,geo_level_code&time=from+${this.props.fromYear}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.parseApiResponse(data);
       })
       .catch(console.log)

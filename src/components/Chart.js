@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Line} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 class Chart extends Component {
   constructor(props) {
@@ -7,15 +7,64 @@ class Chart extends Component {
     this.getData = this.getData.bind(this);
   }
   messagesEndRef = React.createRef()
-
-  componentDidMount () {
+  // componentWillMount() {
+    
+  // }
+  componentDidMount() {
     this.scrollToBottom()
-  }
-  componentDidUpdate () {
-    this.scrollToBottom()
+    this.getAvgData();
   }
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+  }
+  getAvgData() {
+    let labels = []
+    let months = false;
+    if (this.props.title.includes('Quarterly')) {
+      labels = ['Q1', 'Q2', 'Q3', 'Q4'];
+    }
+    else {
+      labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      months = true;
+    }
+    let avgData = []
+    labels.forEach(label => {
+      let search = '';
+      if (months) {
+        let temp = labels.indexOf(label) + 1;
+        if (temp < 10) {
+          search = temp.toString();
+          search = '0' + search;
+        }
+        else {
+          search = temp.toString();
+        }
+      }
+      else {
+        search = label;
+      }
+      let avg = 0;
+      let count = 0;
+      let sum = 0;
+      this.props.labels.forEach((dataPoint, index) => {
+        let temp = dataPoint;
+        if (months) {
+          temp = dataPoint.split('-')[1];
+        }
+        if (temp === search) {
+          sum += parseInt(this.props.data[index]);
+          count += 1;
+        }
+      })
+      avg = sum / count;
+      avgData.push(avg);
+
+    })
+    let render = false;
+    if (avgData.length > 1) {
+      render = true;
+    }
+    this.props.updateAvgData(labels, avgData, render);
   }
 
   getData() {
@@ -50,10 +99,10 @@ class Chart extends Component {
   render() {
     return (
       <div>
-        <Line data={this.getData} 
-              width={500}
-              height={300}
-              options={{maintainAspectRatio: false}}
+        <Line data={this.getData}
+          width={500}
+          height={300}
+          options={{ maintainAspectRatio: false }}
         />
         <div ref={this.messagesEndRef} />
       </div>
