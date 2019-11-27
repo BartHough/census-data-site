@@ -172,6 +172,7 @@ export class StateContainer extends Component {
         }
         {
           this.state.renderAvg &&
+          this.state.avgData.length > 0 &&
           <AverageChart
             labels={this.state.avgLabels}
             data={this.state.avgData}

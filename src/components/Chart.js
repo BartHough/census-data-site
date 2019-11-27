@@ -58,12 +58,17 @@ class Chart extends Component {
       })
       avg = sum / count;
       avgData.push(avg);
-
+      console.log(search + ' ' + avg)
     })
     let render = false;
     if (avgData.length > 1) {
       render = true;
     }
+    avgData.forEach(data => {
+      if(!data){
+        render = false;
+      }
+    })
     this.props.updateAvgData(labels, avgData, render);
   }
 

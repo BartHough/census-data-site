@@ -6,13 +6,13 @@ export class AverageChart extends Component {
         super(props);
         this.getData = this.getData.bind(this);
     }
-    messagesEndRef = React.createRef()
+    endRef = React.createRef();
 
     componentDidMount() {
-        this.scrollToBottom()
+        this.scrollToBottom();
     }
     scrollToBottom = () => {
-        this.messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+        this.endRef.current.scrollIntoView({ behavior: 'smooth' });
     }
     getData() {
         return {
@@ -50,7 +50,7 @@ export class AverageChart extends Component {
                     height={300}
                     options={{ maintainAspectRatio: false }}
                 />
-                <div ref={this.messagesEndRef} />
+                <div ref={this.endRef} />
             </div>
         )
     }
