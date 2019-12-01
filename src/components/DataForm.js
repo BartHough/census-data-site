@@ -58,15 +58,14 @@ class DataForm extends Component {
     // else if (geoLevelCodes.length > 5) {
     //   location = this.props.stateShort;
     // }
-    this.props.updateTableState(
-      tableName,
-      dataTypes,
-      categories,
-      tableId,
-      this.props.tableData,
-      this.props.dropDown,
+    this.props.updateTableState(tableName, 
+      dataTypes, 
+      categories, 
+      tableId, 
+      this.props.tableData, 
+      this.props.dropDown, 
       location
-    );
+      );
   }
 
   handleChange = event => {
@@ -92,7 +91,6 @@ class DataForm extends Component {
     fetch(apiUrl)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.parseApiResponse(data);
       })
       .catch(console.log);
@@ -170,8 +168,6 @@ class DataForm extends Component {
         labels.push(row[7]);
       }
     });
-    console.log(chartData);
-    console.log(labels);
     if (chartData.length === 0 || labels.length === 0) {
       this.invalidComboAlert();
       return;

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import GMap from './GMap';
 import DataForm from './DataForm';
 import Chart from './Chart';
-import Spinner from './Spinner'
+import Spinner from './Spinner';
+import AverageChart from './AverageChart';
 
 export class StateContainer extends Component {
 
@@ -33,6 +34,9 @@ export class StateContainer extends Component {
       categories: [],
       tableId: "",
       renderChart: false,
+      renderAvg: false,
+      avgData: [],
+      avgLabels: [],
       loading: false,
       location: ""
     }
@@ -103,6 +107,15 @@ export class StateContainer extends Component {
     })
   }
 
+  updateAvgData = (avgLabels, avgData, renderAvg) => {
+    this.setState({
+      ...this.state,
+      avgLabels,
+      avgData,
+      renderAvg
+    })
+  }
+
   render() {
     return (
       <div>
@@ -154,8 +167,26 @@ export class StateContainer extends Component {
             labels={this.state.labels}
             data={this.state.chartData}
             title={this.state.tableName}
+            updateAvgData={this.updateAvgData}
           />
         }
+        {
+          this.state.renderAvg &&
+          this.state.avgData.length > 0 &&
+          <AverageChart
+            labels={this.state.avgLabels}
+            data={this.state.avgData}
+            title={this.state.tableName}
+          />
+        }
+        <div>
+          {/* {
+            this.state.loading &&
+            !this.state.renderAvg &&
+            <Spinner />
+          } */}
+        </div>
+
       </div>
     );
   }
