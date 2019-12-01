@@ -11,16 +11,17 @@
 }
 
 .accordion__button {
-    background-color: #2A88AD;
-    color: white;
+    background-color: white;
+    color: black;
     cursor: pointer;
-    padding: 8px;
+    padding: 5px;
     width: 100%;
     text-align: left;
     border: none;
 }
 .accordion__button:hover {
     background-color: #2A6881;
+    color: white;
 }
 .accordion__button:before {
     display: inline-block;
