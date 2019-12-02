@@ -28,13 +28,14 @@ class DataForm extends Component {
   }
 
   handleDataType = selectedOption => {
+    console.log(selectedOption);
     const dataType = selectedOption.value;
-    this.props.updateDataTypeState(dataType);
+    this.props.updateDataTypeState(dataType, selectedOption);
   };
 
   handleCategory = selectedOption => {
     const category = selectedOption.value;
-    this.props.updateCategoryState(category);
+    this.props.updateCategoryState(category, selectedOption);
   };
 
   async handleTableName(selectedOption) {
@@ -254,12 +255,14 @@ class DataForm extends Component {
               style={style.select}
               onChange={this.handleDataType}
               options={this.props.dataTypes}
+              value={this.props.dataTypeValue}
             />
             <Select
               placeholder="Select Category"
               style={style.select}
               onChange={this.handleCategory}
               options={this.props.categories}
+              value={this.props.categoryValue}
             />
             <div className="inner-wrap">
               <label htmlFor="timeStart">Time Period Start</label>
