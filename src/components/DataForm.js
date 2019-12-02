@@ -269,6 +269,8 @@ class DataForm extends Component {
                 type="date"
                 value={this.props.timeStart}
                 onChange={this.handleChange}
+                min='1950-01-01' 
+                max='2018-12-31'
                 required
               />
               <div className="button-section">
