@@ -153,25 +153,26 @@ export class StateContainer extends Component {
           updateTableState={this.updateTableState}
           updateTimeState={this.updateTimeState}
           updateLoading={this.updateLoading}
+          updateAvgData={this.updateAvgData}
         />
         <div>
           {
             this.state.loading &&
-            !this.state.renderChart &&
             <Spinner />
           }
         </div>
         {
           this.state.renderChart &&
+          !this.state.loading &&
           <Chart
             labels={this.state.labels}
             data={this.state.chartData}
             title={this.state.tableName}
-            updateAvgData={this.updateAvgData}
           />
         }
         {
           this.state.renderAvg &&
+          !this.state.loading &&
           this.state.avgData.length > 0 &&
           <AverageChart
             labels={this.state.avgLabels}
@@ -179,14 +180,6 @@ export class StateContainer extends Component {
             title={this.state.tableName}
           />
         }
-        <div>
-          {/* {
-            this.state.loading &&
-            !this.state.renderAvg &&
-            <Spinner />
-          } */}
-        </div>
-
       </div>
     );
   }
