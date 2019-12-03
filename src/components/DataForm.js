@@ -28,13 +28,14 @@ class DataForm extends Component {
   }
 
   handleDataType = selectedOption => {
+    console.log(selectedOption);
     const dataType = selectedOption.value;
-    this.props.updateDataTypeState(dataType);
+    this.props.updateDataTypeState(dataType, selectedOption);
   };
 
   handleCategory = selectedOption => {
     const category = selectedOption.value;
-    this.props.updateCategoryState(category);
+    this.props.updateCategoryState(category, selectedOption);
   };
 
   async handleTableName(selectedOption) {
@@ -174,7 +175,63 @@ class DataForm extends Component {
     }
     this.props.updateGraphState(this.props.graphData, labels, chartData, true);
     this.props.updateLoading(false);
+    this.getAvgData(labels, chartData);
   };
+
+  getAvgData(allLabels, allData) {
+    let labels = allLabels;
+    let months = false;
+    if (this.props.tableName.includes('Quarterly')) {
+      labels = ['Q1', 'Q2', 'Q3', 'Q4'];
+    }
+    else {
+      labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      months = true;
+    }
+    let avgData = [];
+    labels.forEach(label => {
+      let search = '';
+      if (months) {
+        let temp = labels.indexOf(label) + 1;
+        if (temp < 10) {
+          search = temp.toString();
+          search = '0' + search;
+        }
+        else {
+          search = temp.toString();
+        }
+      }
+      else {
+        search = label;
+      }
+      let avg = 0;
+      let count = 0;
+      let sum = 0;
+      this.props.labels.forEach((dataPoint, index) => {
+        let temp = dataPoint;
+        if (months) {
+          temp = dataPoint.split('-')[1];
+        }
+        if (temp === search) {
+          sum += parseInt(allData[index]);
+          count += 1;
+        }
+      })
+      avg = sum / count;
+      avgData.push(avg);
+      console.log(search + ' ' + avg);
+    })
+    let render = false;
+    if (avgData.length > 1) {
+      render = true;
+    }
+    avgData.forEach(data => {
+      if(!data){
+        render = false;
+      }
+    })
+    this.props.updateAvgData(labels, avgData, render);
+  }
 
   render() {
     return (
@@ -198,12 +255,14 @@ class DataForm extends Component {
               style={style.select}
               onChange={this.handleDataType}
               options={this.props.dataTypes}
+              value={this.props.dataTypeValue}
             />
             <Select
               placeholder="Select Category"
               style={style.select}
               onChange={this.handleCategory}
               options={this.props.categories}
+              value={this.props.categoryValue}
             />
             <div className="inner-wrap">
               <label htmlFor="timeStart">Time Period Start</label>
@@ -213,6 +272,8 @@ class DataForm extends Component {
                 type="date"
                 value={this.props.timeStart}
                 onChange={this.handleChange}
+                min='1950-01-01' 
+                max='2018-12-31'
                 required
               />
               <div className="button-section">

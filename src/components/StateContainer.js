@@ -38,7 +38,9 @@ export class StateContainer extends Component {
       avgData: [],
       avgLabels: [],
       loading: false,
-      location: ""
+      location: "",
+      dataTypeValue: "",
+      categoryValue: ""
     }
   }
 
@@ -54,21 +56,25 @@ export class StateContainer extends Component {
     })
   }
 
-  updateDataTypeState = (dataType) => {
+  updateDataTypeState = (dataType, dataTypeValue) => {
     this.setState({
       ...this.state,
-      dataType
+      dataType,
+      dataTypeValue
     })
   }
 
-  updateCategoryState = (category) => {
+  updateCategoryState = (category, categoryValue) => {
     this.setState({
       ...this.state,
-      category
+      category,
+      categoryValue
     })
   }
 
   updateTableState = (tableName, dataTypes, categories, tableId, tableData, dropDown, location) => {
+    const dataTypeValue = null;
+    const categoryValue = null;
     this.setState({
       ...this.state,
       tableName,
@@ -77,7 +83,9 @@ export class StateContainer extends Component {
       tableId,
       tableData,
       dropDown,
-      location
+      location,
+      dataTypeValue,
+      categoryValue
     })
   }
 
@@ -146,6 +154,8 @@ export class StateContainer extends Component {
           region={this.state.region}
           stateShort={this.state.stateShort}
           location={this.state.location}
+          dataTypeValue={this.state.dataTypeValue}
+          categoryValue={this.state.categoryValue}
           updateFormState={this.updateFormState}
           updateCategoryState={this.updateCategoryState}
           updateDataTypeState={this.updateDataTypeState}
@@ -153,25 +163,26 @@ export class StateContainer extends Component {
           updateTableState={this.updateTableState}
           updateTimeState={this.updateTimeState}
           updateLoading={this.updateLoading}
+          updateAvgData={this.updateAvgData}
         />
         <div>
           {
             this.state.loading &&
-            !this.state.renderChart &&
             <Spinner />
           }
         </div>
         {
           this.state.renderChart &&
+          !this.state.loading &&
           <Chart
             labels={this.state.labels}
             data={this.state.chartData}
             title={this.state.tableName}
-            updateAvgData={this.updateAvgData}
           />
         }
         {
           this.state.renderAvg &&
+          !this.state.loading &&
           this.state.avgData.length > 0 &&
           <AverageChart
             labels={this.state.avgLabels}
@@ -179,14 +190,6 @@ export class StateContainer extends Component {
             title={this.state.tableName}
           />
         }
-        <div>
-          {/* {
-            this.state.loading &&
-            !this.state.renderAvg &&
-            <Spinner />
-          } */}
-        </div>
-
       </div>
     );
   }
