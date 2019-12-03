@@ -59,14 +59,14 @@ class DataForm extends Component {
     // else if (geoLevelCodes.length > 5) {
     //   location = this.props.stateShort;
     // }
-    this.props.updateTableState(tableName, 
-      dataTypes, 
-      categories, 
-      tableId, 
-      this.props.tableData, 
-      this.props.dropDown, 
+    this.props.updateTableState(tableName,
+      dataTypes,
+      categories,
+      tableId,
+      this.props.tableData,
+      this.props.dropDown,
       location
-      );
+    );
   }
 
   handleChange = event => {
@@ -226,7 +226,7 @@ class DataForm extends Component {
       render = true;
     }
     avgData.forEach(data => {
-      if(!data){
+      if (!data) {
         render = false;
       }
     })
@@ -250,6 +250,15 @@ class DataForm extends Component {
               onChange={this.handleTableName}
               options={this.props.dropDown}
             />
+            {!this.props.disabled && (
+              <input
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ opacity: 0, height: 0 }}
+                value={this.props.tableName}
+                required={true}
+              />
+            )}
             <Select
               placeholder="Select Data Type"
               style={style.select}
@@ -257,6 +266,15 @@ class DataForm extends Component {
               options={this.props.dataTypes}
               value={this.props.dataTypeValue}
             />
+            {!this.props.disabled && (
+              <input
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ opacity: 0, height: 0 }}
+                value={this.props.dataTypeValue}
+                required={true}
+              />
+            )}
             <Select
               placeholder="Select Category"
               style={style.select}
@@ -264,6 +282,15 @@ class DataForm extends Component {
               options={this.props.categories}
               value={this.props.categoryValue}
             />
+            {!this.props.disabled && (
+              <input
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ opacity: 0, height: 0 }}
+                value={this.props.categoryValue}
+                required={true}
+              />
+            )}
             <div className="inner-wrap">
               <label htmlFor="timeStart">Time Period Start</label>
               <input
@@ -272,7 +299,7 @@ class DataForm extends Component {
                 type="date"
                 value={this.props.timeStart}
                 onChange={this.handleChange}
-                min='1950-01-01' 
+                min='1950-01-01'
                 max='2018-12-31'
                 required
               />
