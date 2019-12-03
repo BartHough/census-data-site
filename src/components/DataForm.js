@@ -226,11 +226,7 @@ class DataForm extends Component {
       render = true;
     }
     avgData.forEach(data => {
-<<<<<<< HEAD
       if (!data) {
-=======
-      if(!data){
->>>>>>> c13dfad0b12218deae32992284b2bac092a8806c
         render = false;
       }
     })
@@ -303,11 +299,7 @@ class DataForm extends Component {
                 type="date"
                 value={this.props.timeStart}
                 onChange={this.handleChange}
-<<<<<<< HEAD
                 min='1950-01-01'
-=======
-                min='1950-01-01' 
->>>>>>> c13dfad0b12218deae32992284b2bac092a8806c
                 max='2018-12-31'
                 required
               />
